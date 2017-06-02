@@ -1,0 +1,16 @@
+repo2docker\.detectors\.PythonBuildPack
+=======================================
+
+.. currentmodule:: repo2docker.detectors
+
+.. autoclass:: PythonBuildPack
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

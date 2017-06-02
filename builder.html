@@ -1,0 +1,493 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Creating a New Builder for jupyter-repo2docker &#8212; repo2docker 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/index.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/js/scroll.js"></script>
+    <script type="text/javascript" src="_static/js/mobile-nav.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="Using repo2docker" href="use.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+
+<nav class="navbar navbar-fixed-top" role="navigation" id="navbar" >
+        <div class="navbar-inner">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://jupyter.org/index.html">
+                  <img class="navbar-logo" src="_static/_images/nav_logo.svg" alt="Jupyter logo">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                      
+                        
+                          <li>
+                            <a href="http://jupyter.org/install.html" class="tab">Install</a>
+                          </li>
+                        
+                      
+                    
+                      
+                        
+                          <li>
+                            <a href="http://jupyter.org/about.html" class="tab">About</a>
+                          </li>
+                        
+                      
+                    
+                      
+                        
+                          <li>
+                            <a href="http://jupyter.org/community.html" class="tab">Resources</a>
+                          </li>
+                        
+                      
+                    
+                      
+                        
+                          <li>
+                            <a href="index.html"  class="tab navbar-active">Documentation</a>
+                          </li>
+                        
+                      
+                    
+                      
+                           <li>
+                             <a href=https://nbviewer.jupyter.org class="tab" target="_blank">NBViewer</a>
+                           </li>
+                      
+                    
+                      
+                        
+                          <li>
+                            <a href="http://jupyter.org/widgets.html" class="tab">Widgets</a>
+                          </li>
+                        
+                      
+                    
+                      
+                           <li>
+                             <a href=https://blog.jupyter.org class="tab" target="_blank">Blog</a>
+                           </li>
+                      
+                    
+                      
+                        
+                          <li>
+                            <a href="http://jupyter.org/donate.html" class="tab">Donate</a>
+                          </li>
+                        
+                      
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+        <div class="docs-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li class="docs-breadcrumb-item"><a href="https://jupyter.org"><img src="_static/_images/jupytertheme-images/breadcrumb-home.svg" / class="breadcrumb-home"></a><img src="_static/_images/jupytertheme-images/breadcrumb-separator.svg" class="breadcrumb-separator"/></li>
+                    
+                      <li class="docs-breadcrumb-item"><a href="index.html"> repo2docker</a><img src="_static/_images/jupytertheme-images/breadcrumb-separator.svg" class="breadcrumb-separator"/></li>
+                      
+                      <li class="docs-breadcrumb-item">Creating a New Builder for jupyter-repo2docker</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+  <div class="container">
+    <div class = "docs-mobile-nav">
+      
+
+<div>
+  
+  
+  <div class="mobile-nav-current-dropdown" data-toggle = "collapse" data-target = "#sectionList">
+    <div class="mobile-nav-current">
+      
+        <h3 class="mobile-nav-current-section"> repo2docker </h3>
+      
+      <h2 class="mobile-nav-current-page"> Creating a New Builder for jupyter-repo2docker </h2>
+    </div>
+    <div class="top-mobile-nav-expand">
+      <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
+    </div>
+  </div>
+
+  <div id="sectionList" class="collapse">
+    <div class="dropdown">
+      
+      <div type = "button" class = "btn mobile-nav-section">
+        <h3 class="mobile-nav-header">
+          <a href="index.html">repo2docker</a>
+        </h3>
+      </div>
+    </div>
+    
+    
+      
+      
+      <div class="dropdown">
+        
+        
+          
+          
+            <div type = "button" class = "btn mobile-nav-section">
+              <h3 class="mobile-nav-header">
+                <a class="reference internal" href="overview.html">Overview</a>
+
+              </h3>
+            </div>
+          
+        
+      </div>
+    
+      
+      
+      <div class="dropdown">
+        
+        
+          
+          
+            <div type = "button" class = "btn mobile-nav-section">
+              <h3 class="mobile-nav-header">
+                <a class="reference internal" href="use.html">Using repo2docker</a>
+
+              </h3>
+            </div>
+          
+        
+      </div>
+    
+      
+      
+      <div class="dropdown">
+        
+        
+          
+          
+            <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".heading3">
+              <h3 class="mobile-nav-header"> Creating a New Builder for jupyter-repo2docker</h3>
+              <div class="mobile-nav-expand">
+                <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
+              </div>
+            </div>
+          
+          
+        
+          
+          
+            <ul class = "heading3 collapse mobile-nav-items">
+              <li class = "toctree-l2">
+                <a class="current reference internal" href="#">Creating a New Builder for jupyter-repo2docker</a>
+              </li>
+              
+<li class="toctree-l2"><a class="reference internal" href="#making-a-new-s2i-builder">Making a new s2i builder</a>
+<li class="toctree-l2"><a class="reference internal" href="#modifying-the-dockerfile">Modifying the Dockerfile</a>
+<li class="toctree-l2"><a class="reference internal" href="#adding-the-buildpack">Adding the BuildPack</a>
+<li class="toctree-l2"><a class="reference internal" href="#building-testing-your-builder">Building / testing your builder</a>
+
+
+
+            </ul>
+          
+        
+      </div>
+    
+      
+      
+      <div class="dropdown">
+        
+        
+          
+          
+            <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".heading4">
+              <h3 class="mobile-nav-header"> API</h3>
+              <div class="mobile-nav-expand">
+                <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
+              </div>
+            </div>
+          
+          
+        
+          
+          
+            <ul class = "heading4 collapse mobile-nav-items">
+              <li class = "toctree-l2">
+                <a class="reference internal" href="api.html">API</a>
+              </li>
+              
+<li class="toctree-l2"><a class="reference internal" href="generated/repo2docker.app.Repo2Docker.html">repo2docker.app.Repo2Docker</a>
+<li class="toctree-l2"><a class="reference internal" href="api.html#builders">Builders</a>
+
+
+
+
+            </ul>
+          
+        
+      </div>
+    
+  </div>
+</div>
+    </div>
+    <div class="row">
+      <div class="docs-desktop-nav">
+      <div class="col-sm-4 col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><h1>
+  <a href="index.html">repo2docker</a>
+</h1>
+
+<div id="searchbox" role="search">
+    <form class="search" action="search.html" method="get">
+      <div>
+        <input type="text" placeholder= "Search" class="docs-search-input" name="q" />
+        <input type="submit" class="docs-search-submit" value="" />
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use.html">Using repo2docker</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating a New Builder for jupyter-repo2docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#making-a-new-s2i-builder">Making a new s2i builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modifying-the-dockerfile">Modifying the Dockerfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-the-buildpack">Adding the BuildPack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-testing-your-builder">Building / testing your builder</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+
+
+        </div>
+      </div>
+      </div>
+      <div class="col-sm-8 col-md-9 content">
+        
+  <div class="section" id="creating-a-new-builder-for-jupyter-repo2docker">
+<span id="builder"></span><h1>Creating a New Builder for jupyter-repo2docker<a class="headerlink" href="#creating-a-new-builder-for-jupyter-repo2docker" title="Permalink to this headline">¶</a></h1>
+<p>Builders determine how to transform the contents of a git repository
+into a Docker image. They know how to handle things like dependency
+files that are language-specific in order to create the computational
+environment that you want.</p>
+<p>Builders will be used along with <code class="docutils literal"><span class="pre">s2i</span></code> in order to create the Docker image.
+These steps show the basics for creating your own builder. You’ll need a
+little bit of information about Dockerfiles and how they’re created.</p>
+<p>The most common reason to create a builder is if one does not yet exist
+for a language that you wish to use. For example, below we’ll demo
+how to create a s2i builder for <code class="docutils literal"><span class="pre">npm</span></code>, which may be used to install
+<code class="docutils literal"><span class="pre">javascript</span></code> packages.</p>
+<div class="section" id="making-a-new-s2i-builder">
+<h2>Making a new s2i builder<a class="headerlink" href="#making-a-new-s2i-builder" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p class="first">Choose a name for a new builder, <code class="docutils literal"><span class="pre">&lt;buildername&gt;</span></code>. Typically, the
+<code class="docutils literal"><span class="pre">&lt;buildername&gt;</span></code> will correspond to a package manager name.</p>
+<p>For our example, we’ll use <code class="docutils literal"><span class="pre">npm</span></code>.</p>
+</li>
+<li><p class="first">Move into the <code class="docutils literal"><span class="pre">s2i-builders</span></code> directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">s2i</span><span class="o">-</span><span class="n">builders</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Initialize a directory where our image will live. We’ll do this by
+running the <code class="docutils literal"><span class="pre">s2i</span> <span class="pre">create</span></code> like so:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">s2i</span> <span class="n">create</span> <span class="n">jupyterhub</span><span class="o">/</span><span class="n">repo2docker</span><span class="o">-&lt;</span><span class="n">buildername</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">buildername</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>Here’s how it looks for our example:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># Example `s2i create` command where &lt;buildername&gt; is npm</span>
+<span class="n">s2i</span> <span class="n">create</span> <span class="n">jupyterhub</span><span class="o">/</span><span class="n">repo2docker</span><span class="o">-</span><span class="n">npm</span> <span class="n">npm</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Move into the newly-created directory:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">npm</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Build the image by running:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span>
+</pre></div>
+</div>
+<p>This step creates a <code class="docutils literal"><span class="pre">Dockerfile</span></code> within the folder.</p>
+</li>
+</ol>
+<p>This Dockerfile contains will contain all of the instructions for
+how to generate an image from a repository. Next we’ll cover how to
+fill this Dockerfile with instructions.</p>
+</div>
+<div class="section" id="modifying-the-dockerfile">
+<h2>Modifying the Dockerfile<a class="headerlink" href="#modifying-the-dockerfile" title="Permalink to this headline">¶</a></h2>
+<p>Next we’ll modify Dockerfile to perform the actions that we care about.
+You can modify your <code class="docutils literal"><span class="pre">Dockerfile</span></code> and fill out the <code class="docutils literal"><span class="pre">docker</span> <span class="pre">build</span></code> as you want.
+There are two files that may be edited:</p>
+<ol class="arabic simple">
+<li><strong>The “Dockerfile“ for the builder itself</strong>. This is used to
+create the base builder image (e.g. installing the base runtime environment).</li>
+<li><strong>The “s2i/bin/assemble“ script</strong>. This is run
+when creating each new image from a given repository (e.g. pulling in
+repo-specific dependencies and repo contents). This manages the logic
+for how dependencies are installed.</li>
+</ol>
+<p>&lt;&lt;&lt;TODO: ADD EXAMPLE FOR NPM&gt;&gt;&gt;</p>
+<p>You can view the <a class="reference external" href="https://github.com/jupyter/repo2docker/tree/master/s2i-builders">existing s2i-builders</a> in this repo for some examples.</p>
+<p>Now that we have the basic scripts to generate images from a git repository,
+we need to create a <code class="docutils literal"><span class="pre">BuildPack</span></code> in Python. <code class="docutils literal"><span class="pre">repo2docker</span></code> will use this
+to know when we should run the scripts we’ve just created above.</p>
+</div>
+<div class="section" id="adding-the-buildpack">
+<h2>Adding the BuildPack<a class="headerlink" href="#adding-the-buildpack" title="Permalink to this headline">¶</a></h2>
+<p>Once you builder image is finished, you need to add a Buildpack to run your
+builds and to make sure that your new builder is used on the appropriate source
+repos. For some examples, see <a class="reference external" href="https://github.com/jupyter/repo2docker/blob/master/repo2docker/detectors.py">detectors.py</a>.</p>
+<ol class="arabic simple">
+<li>Define your BuildPack class in <code class="docutils literal"><span class="pre">detectors.py</span></code>. In most cases, you only need
+to implement two things if you subclass <code class="docutils literal"><span class="pre">S2IBuildPack</span></code>:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><strong>The “detect“ method</strong>. This should return a single <code class="docutils literal"><span class="pre">bool</span></code> variable
+that corresponds to whether this buildpack should be used for the given
+repository. For example, the <code class="docutils literal"><span class="pre">conda</span></code> buildpack checks to see whether
+<code class="docutils literal"><span class="pre">environment.yml</span></code> exists.</li>
+<li><strong>The “build_image“  attribute</strong>. This defines which base Docker image
+will be used for the build. This can be set either via config or
+within the <code class="docutils literal"><span class="pre">.detect()</span></code> method.</li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Finally, to get the builder application to use your BuildPack, add it to
+the <code class="docutils literal"><span class="pre">buildpacks</span></code> list in <code class="docutils literal"><span class="pre">app.py</span></code>.</li>
+</ol>
+</div>
+<div class="section" id="building-testing-your-builder">
+<h2>Building / testing your builder<a class="headerlink" href="#building-testing-your-builder" title="Permalink to this headline">¶</a></h2>
+<p>Once everything above is done, you will be able to build a repo by
+specifying a source repo URL with this command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">repo2docker</span> <span class="o">&lt;</span><span class="n">url</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">source</span><span class="o">-</span><span class="n">repo</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+        
+    </div>
+  </div>
+
+  
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+  <script type= "text/javascript">
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+  </script>
+
+
+
+
+
+
+<footer>
+    <div class="custom-footer" role="navigation">
+        <div class="container">
+            <div class="navbar-text">
+                <ul class="footer-text">
+                    <li><a href="http://jupyter.org/index.html">Home</a></li>
+                    
+                      
+                           <li><a href="http://jupyter.org/install.html">Install</a></li>
+                      
+                    
+                      
+                           <li><a href="http://jupyter.org/about.html">About</a></li>
+                      
+                    
+                      
+                           <li><a href="http://jupyter.org/community.html">Resources</a></li>
+                      
+                    
+                      
+                           <li><a href="http://jupyter.org/">Documentation</a></li>
+                      
+                    
+                      
+                           <li><a href="https://nbviewer.jupyter.org" target="_blank">NBViewer</a></li>
+                      
+                    
+                      
+                           <li><a href="http://jupyter.org/widgets.html">Widgets</a></li>
+                      
+                    
+                      
+                           <li><a href="https://blog.jupyter.org" target="_blank">Blog</a></li>
+                      
+                    
+                      
+                           <li><a href="http://jupyter.org/donate.html">Donate</a></li>
+                      
+                    
+                    <p>
+                       Copyright &#169; 2017, Project Jupyter - 
+                      Last updated on Fri, Jun 02, 2017
+                    </p>
+                </ul>
+            </div>
+            <div class="follow">
+                <a class="github-button" href="https://github.com/jupyter" aria-label="Follow @jupyter on GitHub">Follow @jupyter</a>
+                <br><a href="https://twitter.com/ProjectJupyter" class="twitter-follow-button" data-show-count="false">Follow @ProjectJupyter</a>
+            </div>
+        </div>
+    </div>
+</footer>
+  </body>
+</html>

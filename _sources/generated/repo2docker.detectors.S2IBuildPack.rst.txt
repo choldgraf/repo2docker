@@ -1,0 +1,16 @@
+repo2docker\.detectors\.S2IBuildPack
+====================================
+
+.. currentmodule:: repo2docker.detectors
+
+.. autoclass:: S2IBuildPack
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   

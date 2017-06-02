@@ -1,0 +1,16 @@
+repo2docker\.app\.Repo2Docker
+=============================
+
+.. currentmodule:: repo2docker.app
+
+.. autoclass:: Repo2Docker
+
+   
+   .. automethod:: __init__
+
+   
+   
+
+   
+   
+   
