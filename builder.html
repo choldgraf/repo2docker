@@ -29,7 +29,7 @@
     <script type="text/javascript" src="_static/js/mobile-nav.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="API" href="api.html" />
+    <link rel="next" title="repo2docker API" href="api.html" />
     <link rel="prev" title="Using repo2docker" href="use.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -247,7 +247,7 @@
           
           
             <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".heading4">
-              <h3 class="mobile-nav-header"> API</h3>
+              <h3 class="mobile-nav-header"> repo2docker API</h3>
               <div class="mobile-nav-expand">
                 <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
               </div>
@@ -259,7 +259,7 @@
           
             <ul class = "heading4 collapse mobile-nav-items">
               <li class = "toctree-l2">
-                <a class="reference internal" href="api.html">API</a>
+                <a class="reference internal" href="api.html">repo2docker API</a>
               </li>
               
 <li class="toctree-l2"><a class="reference internal" href="generated/repo2docker.app.Repo2Docker.html">repo2docker.app.Repo2Docker</a>
@@ -305,7 +305,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#building-testing-your-builder">Building / testing your builder</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">repo2docker API</a></li>
 </ul>
 
 
@@ -390,10 +390,9 @@ to know when we should run the scripts we’ve just created above.</p>
 <p>Once you builder image is finished, you need to add a Buildpack to run your
 builds and to make sure that your new builder is used on the appropriate source
 repos. For some examples, see <a class="reference external" href="https://github.com/jupyter/repo2docker/blob/master/repo2docker/detectors.py">detectors.py</a>.</p>
-<ol class="arabic simple">
-<li>Define your BuildPack class in <code class="docutils literal"><span class="pre">detectors.py</span></code>. In most cases, you only need
-to implement two things if you subclass <code class="docutils literal"><span class="pre">S2IBuildPack</span></code>:</li>
-</ol>
+<ol class="arabic">
+<li><p class="first">Define your BuildPack class in <code class="docutils literal"><span class="pre">detectors.py</span></code>. In most cases, you only need
+to implement two things if you subclass <code class="docutils literal"><span class="pre">S2IBuildPack</span></code>:</p>
 <blockquote>
 <div><ul class="simple">
 <li><strong>The “detect“ method</strong>. This should return a single <code class="docutils literal"><span class="pre">bool</span></code> variable
@@ -405,9 +404,10 @@ will be used for the build. This can be set either via config or
 within the <code class="docutils literal"><span class="pre">.detect()</span></code> method.</li>
 </ul>
 </div></blockquote>
-<ol class="arabic simple" start="2">
-<li>Finally, to get the builder application to use your BuildPack, add it to
-the <code class="docutils literal"><span class="pre">buildpacks</span></code> list in <code class="docutils literal"><span class="pre">app.py</span></code>.</li>
+</li>
+<li><p class="first">Finally, to get the builder application to use your BuildPack, add it to
+the <code class="docutils literal"><span class="pre">buildpacks</span></code> list in <code class="docutils literal"><span class="pre">app.py</span></code>.</p>
+</li>
 </ol>
 </div>
 <div class="section" id="building-testing-your-builder">

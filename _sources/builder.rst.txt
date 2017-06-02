@@ -87,13 +87,13 @@ repos. For some examples, see `detectors.py
 1. Define your BuildPack class in ``detectors.py``. In most cases, you only need
    to implement two things if you subclass ``S2IBuildPack``:
 
-  - **The ``detect`` method**. This should return a single ``bool`` variable
-    that corresponds to whether this buildpack should be used for the given
-    repository. For example, the ``conda`` buildpack checks to see whether
-    ``environment.yml`` exists.
-  - **The ``build_image``  attribute**. This defines which base Docker image
-    will be used for the build. This can be set either via config or
-    within the ``.detect()`` method.
+    - **The ``detect`` method**. This should return a single ``bool`` variable
+      that corresponds to whether this buildpack should be used for the given
+      repository. For example, the ``conda`` buildpack checks to see whether
+      ``environment.yml`` exists.
+    - **The ``build_image``  attribute**. This defines which base Docker image
+      will be used for the build. This can be set either via config or
+      within the ``.detect()`` method.
 
 2. Finally, to get the builder application to use your BuildPack, add it to
    the ``buildpacks`` list in ``app.py``.

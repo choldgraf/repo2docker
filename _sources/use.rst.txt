@@ -7,5 +7,4 @@ run the following from the command line::
    python3 -m repo2docker <url-to-source-repo>
 
 There are many ways that you can configure and extend ``repo2docker``.
-See the API page for a list of arguments you can pass, or our guide to
-:ref:`creating your own builder image <builder>`_
+See the :ref:`api` for a list of arguments you can pass, or :ref:`builder`.
