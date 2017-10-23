@@ -1,20 +1,9 @@
-.. _api:
-
 repo2docker API
 ---------------
 
-.. autosummary::
-   :toctree: generated/
+The following arguments may be given in the call to::
 
-   repo2docker.app.Repo2Docker
+  jupyter-repo2docker <path-or-url-to-git-repo>
 
-Builders
-========
-.. autosummary::
-   :toctree: generated/
-
-   repo2docker.detectors.BuildPack
-   repo2docker.detectors.DockerBuildPack
-   repo2docker.detectors.S2IBuildPack
-   repo2docker.detectors.CondaBuildPack
-   repo2docker.detectors.PythonBuildPack
+.. autoconfigurable:: repo2docker.app.Repo2Docker
+    :members: get_argparser

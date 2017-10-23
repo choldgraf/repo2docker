@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>repo2docker.detectors.CondaBuildPack &#8212; repo2docker 0.1 documentation</title>
-    
     <link rel="stylesheet" href="../_static/index.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -36,7 +33,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
 
@@ -176,7 +173,7 @@
           
           
             <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".heading1">
-              <h3 class="mobile-nav-header"> Creating a New Builder for jupyter-repo2docker</h3>
+              <h3 class="mobile-nav-header"> repo2docker API</h3>
               <div class="mobile-nav-expand">
                 <img class="mobile-nav-expand-icon" src="../_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
               </div>
@@ -188,13 +185,51 @@
           
             <ul class = "heading1 collapse mobile-nav-items">
               <li class = "toctree-l2">
-                <a class="reference internal" href="../builder.html">Creating a New Builder for jupyter-repo2docker</a>
+                <a class="reference internal" href="../api.html">repo2docker API</a>
               </li>
               
-<li class="toctree-l2"><a class="reference internal" href="../builder.html#overview">Overview</a>
-<li class="toctree-l2"><a class="reference internal" href="../builder.html#making-a-new-s2i-builder">Making a new s2i builder</a>
-<li class="toctree-l2"><a class="reference internal" href="../builder.html#modifying-the-dockerfile">Modifying the Dockerfile</a>
-<li class="toctree-l2"><a class="reference internal" href="../builder.html#adding-the-buildpack">Adding the BuildPack</a>
+<li class="toctree-l2"><a class="reference internal" href="../api.html#class-repo2docker-repo2docker">Class: <code class="docutils literal"><span class="pre">repo2docker.Repo2Docker</span></code></a>
+
+
+
+            </ul>
+          
+        
+      </div>
+    
+      
+      
+      <div class="dropdown">
+        
+        
+          
+          
+            <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".heading2">
+              <h3 class="mobile-nav-header"> Sample build files</h3>
+              <div class="mobile-nav-expand">
+                <img class="mobile-nav-expand-icon" src="../_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
+              </div>
+            </div>
+          
+          
+        
+          
+          
+            <ul class = "heading2 collapse mobile-nav-items">
+              <li class = "toctree-l2">
+                <a class="reference internal" href="../samples.html">Sample build files</a>
+              </li>
+              
+<li class="toctree-l2"><a class="reference internal" href="../samples.html#system-apt-packages">System - APT Packages</a>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html#system-post-build-scripts">System - Post-build scripts</a>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html#system-specifying-runtime-environments">System - Specifying runtime environments</a>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html#python-requirements-txt">Python - Requirements.txt</a>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html#julia-require">Julia - REQUIRE</a>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html#docker-specifying-dependencies">Docker - Specifying dependencies</a>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html#docker-legacy-dockerfiles">Docker - Legacy Dockerfiles</a>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html#docker-running-scripts">Docker - Running scripts</a>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html#conda-mixed-requirements">Conda - Mixed Requirements</a>
+<li class="toctree-l2"><a class="reference internal" href="../samples.html#conda-environment">Conda Environment</a>
 
 
 
@@ -225,9 +260,9 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../builder.html">Creating a New Builder for jupyter-repo2docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">repo2docker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../samples.html">Sample build files</a></li>
 </ul>
 
 
@@ -238,6 +273,35 @@
         
   <div class="section" id="repo2docker-detectors-condabuildpack">
 <h1>repo2docker.detectors.CondaBuildPack<a class="headerlink" href="#repo2docker-detectors-condabuildpack" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="repo2docker.detectors.CondaBuildPack">
+<em class="property">class </em><code class="descclassname">repo2docker.detectors.</code><code class="descname">CondaBuildPack</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#repo2docker.detectors.CondaBuildPack" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="repo2docker.detectors.CondaBuildPack.__init__">
+<code class="descname">__init__</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#repo2docker.detectors.CondaBuildPack.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a configurable given a config config.</p>
+<dl class="docutils">
+<dt>config <span class="classifier-delimiter">:</span> <span class="classifier">Config</span></dt>
+<dd>If this is empty, default values are used. If config is a
+<code class="xref py py-class docutils literal"><span class="pre">Config</span></code> instance, it will be used to configure the
+instance.</dd>
+<dt>parent <span class="classifier-delimiter">:</span> <span class="classifier">Configurable instance, optional</span></dt>
+<dd>The parent Configurable instance of this object.</dd>
+</dl>
+<p>Subclasses of Configurable must call the <a class="reference internal" href="#repo2docker.detectors.CondaBuildPack.__init__" title="repo2docker.detectors.CondaBuildPack.__init__"><code class="xref py py-meth docutils literal"><span class="pre">__init__()</span></code></a> method of
+<code class="xref py py-class docutils literal"><span class="pre">Configurable</span></code> <em>before</em> doing anything else and using
+<code class="xref py py-func docutils literal"><span class="pre">super()</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyConfigurable</span><span class="p">(</span><span class="n">Configurable</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">MyConfigurable</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="n">config</span><span class="p">)</span>
+        <span class="c1"># Then any other code you need to finish initialization.</span>
+</pre></div>
+</div>
+<p>This ensures that instances will be configured properly.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -298,7 +362,7 @@
                     
                     <p>
                        Copyright &#169; 2017, Project Jupyter - 
-                      Last updated on Mon, Jul 31, 2017
+                      Last updated on Mon, Oct 23, 2017
                     </p>
                 </ul>
             </div>

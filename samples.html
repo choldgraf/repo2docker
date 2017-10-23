@@ -1,0 +1,611 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sample build files &#8212; repo2docker 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/index.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/js/scroll.js"></script>
+    <script type="text/javascript" src="_static/js/mobile-nav.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="repo2docker API" href="api.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+
+<nav class="navbar navbar-fixed-top" role="navigation" id="navbar" >
+        <div class="navbar-inner">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://jupyter.org/index.html">
+                  <img class="navbar-logo" src="_static/_images/nav_logo.svg" alt="Jupyter logo">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    
+                      
+                        
+                          <li>
+                            <a href="http://jupyter.org/install.html" class="tab">Install</a>
+                          </li>
+                        
+                      
+                    
+                      
+                        
+                          <li>
+                            <a href="http://jupyter.org/about.html" class="tab">About</a>
+                          </li>
+                        
+                      
+                    
+                      
+                        
+                          <li>
+                            <a href="http://jupyter.org/community.html" class="tab">Resources</a>
+                          </li>
+                        
+                      
+                    
+                      
+                        
+                          <li>
+                            <a href="index.html"  class="tab navbar-active">Documentation</a>
+                          </li>
+                        
+                      
+                    
+                      
+                           <li>
+                             <a href=https://nbviewer.jupyter.org class="tab" target="_blank">NBViewer</a>
+                           </li>
+                      
+                    
+                      
+                        
+                          <li>
+                            <a href="http://jupyter.org/widgets.html" class="tab">Widgets</a>
+                          </li>
+                        
+                      
+                    
+                      
+                           <li>
+                             <a href=https://blog.jupyter.org class="tab" target="_blank">Blog</a>
+                           </li>
+                      
+                    
+                      
+                        
+                          <li>
+                            <a href="http://jupyter.org/donate.html" class="tab">Donate</a>
+                          </li>
+                        
+                      
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+        <div class="docs-breadcrumbs">
+            <div class="container">
+                <ul>
+                    <li class="docs-breadcrumb-item"><a href="https://jupyter.org"><img src="_static/_images/jupytertheme-images/breadcrumb-home.svg" / class="breadcrumb-home"></a><img src="_static/_images/jupytertheme-images/breadcrumb-separator.svg" class="breadcrumb-separator"/></li>
+                    
+                      <li class="docs-breadcrumb-item"><a href="index.html"> repo2docker</a><img src="_static/_images/jupytertheme-images/breadcrumb-separator.svg" class="breadcrumb-separator"/></li>
+                      
+                      <li class="docs-breadcrumb-item">Sample build files</li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+  <div class="container">
+    <div class = "docs-mobile-nav">
+      
+
+<div>
+  
+  
+  <div class="mobile-nav-current-dropdown" data-toggle = "collapse" data-target = "#sectionList">
+    <div class="mobile-nav-current">
+      
+        <h3 class="mobile-nav-current-section"> repo2docker </h3>
+      
+      <h2 class="mobile-nav-current-page"> Sample build files </h2>
+    </div>
+    <div class="top-mobile-nav-expand">
+      <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
+    </div>
+  </div>
+
+  <div id="sectionList" class="collapse">
+    <div class="dropdown">
+      
+      <div type = "button" class = "btn mobile-nav-section">
+        <h3 class="mobile-nav-header">
+          <a href="index.html">repo2docker</a>
+        </h3>
+      </div>
+    </div>
+    
+    
+      
+      
+      <div class="dropdown">
+        
+        
+          
+          
+            <div type = "button" class = "btn mobile-nav-section">
+              <h3 class="mobile-nav-header">
+                <a class="reference internal" href="api.html">repo2docker API</a>
+
+              </h3>
+            </div>
+          
+        
+      </div>
+    
+      
+      
+      <div class="dropdown">
+        
+        
+          
+          
+            <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".heading2">
+              <h3 class="mobile-nav-header"> Sample build files</h3>
+              <div class="mobile-nav-expand">
+                <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
+              </div>
+            </div>
+          
+          
+        
+          
+          
+            <ul class = "heading2 collapse mobile-nav-items">
+              <li class = "toctree-l2">
+                <a class="current reference internal" href="#">Sample build files</a>
+              </li>
+              
+<li class="toctree-l2"><a class="reference internal" href="#system-apt-packages">System - APT Packages</a>
+<li class="toctree-l2"><a class="reference internal" href="#system-post-build-scripts">System - Post-build scripts</a>
+<li class="toctree-l2"><a class="reference internal" href="#system-specifying-runtime-environments">System - Specifying runtime environments</a>
+<li class="toctree-l2"><a class="reference internal" href="#python-requirements-txt">Python - Requirements.txt</a>
+<li class="toctree-l2"><a class="reference internal" href="#julia-require">Julia - REQUIRE</a>
+<li class="toctree-l2"><a class="reference internal" href="#docker-specifying-dependencies">Docker - Specifying dependencies</a>
+<li class="toctree-l2"><a class="reference internal" href="#docker-legacy-dockerfiles">Docker - Legacy Dockerfiles</a>
+<li class="toctree-l2"><a class="reference internal" href="#docker-running-scripts">Docker - Running scripts</a>
+<li class="toctree-l2"><a class="reference internal" href="#conda-mixed-requirements">Conda - Mixed Requirements</a>
+<li class="toctree-l2"><a class="reference internal" href="#conda-environment">Conda Environment</a>
+
+
+
+
+            </ul>
+          
+        
+      </div>
+    
+  </div>
+</div>
+    </div>
+    <div class="row">
+      <div class="docs-desktop-nav">
+      <div class="col-sm-4 col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><h1>
+  <a href="index.html">repo2docker</a>
+</h1>
+
+<div id="searchbox" role="search">
+    <form class="search" action="search.html" method="get">
+      <div>
+        <input type="text" placeholder= "Search" class="docs-search-input" name="q" />
+        <input type="submit" class="docs-search-submit" value="" />
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="api.html">repo2docker API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sample build files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#system-apt-packages">System - APT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-post-build-scripts">System - Post-build scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-specifying-runtime-environments">System - Specifying runtime environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#python-requirements-txt">Python - Requirements.txt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#julia-require">Julia - REQUIRE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker-specifying-dependencies">Docker - Specifying dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker-legacy-dockerfiles">Docker - Legacy Dockerfiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker-running-scripts">Docker - Running scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conda-mixed-requirements">Conda - Mixed Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conda-environment">Conda Environment</a></li>
+</ul>
+</li>
+</ul>
+
+
+        </div>
+      </div>
+      </div>
+      <div class="col-sm-8 col-md-9 content">
+        
+  <div class="section" id="sample-build-files">
+<span id="id1"></span><h1>Sample build files<a class="headerlink" href="#sample-build-files" title="Permalink to this headline">¶</a></h1>
+<p>There are many options for specifying your environment with <code class="docutils literal"><span class="pre">repo2docker</span></code>.
+The following sections describe a few samples to get you started.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">These files must be in the root of your repository, or in a folder called
+<code class="docutils literal"><span class="pre">binder</span></code> that is in the root of your repository. If you include a folder
+called <code class="docutils literal"><span class="pre">binder</span></code> in the root of your repository, then all build files <em>not</em>
+inside this folder will be ignored.</p>
+</div>
+<div class="section" id="system-apt-packages">
+<h2>System - APT Packages<a class="headerlink" href="#system-apt-packages" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to install packages using the Shell with the <code class="docutils literal"><span class="pre">apt.txt</span></code> file.
+In this case we install <code class="docutils literal"><span class="pre">gfortran</span></code> which does not have an easy Python install.</p>
+<div class="section" id="file-apt-txt">
+<h3>File: <code class="docutils literal"><span class="pre">apt.txt</span></code><a class="headerlink" href="#file-apt-txt" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gfortran</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="system-post-build-scripts">
+<h2>System - Post-build scripts<a class="headerlink" href="#system-post-build-scripts" title="Permalink to this headline">¶</a></h2>
+<p>It is possible to run scripts after you’ve built the environment specified in
+your other files. This could be used to, for example, download data or run
+some configuration scripts. For example, this will download and install a
+Jupyter extension.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>This file needs to be executable in order to work with <code class="docutils literal"><span class="pre">repo2docker</span></code>. If
+you’re on Linux or macOS, run:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">chmod</span> <span class="o">+</span><span class="n">x</span> <span class="n">postBuild</span>
+</pre></div>
+</div>
+<p>If you’re on windows, you can accomplish the same behavior with this
+<code class="docutils literal"><span class="pre">git</span></code> command:</p>
+<div class="last highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">update</span><span class="o">-</span><span class="n">index</span> <span class="o">--</span><span class="n">chmod</span><span class="o">=+</span><span class="n">x</span> <span class="n">postBuild</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="file-postbuild">
+<h3>File: <code class="docutils literal"><span class="pre">postBuild</span></code><a class="headerlink" href="#file-postbuild" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="n">jupyter</span> <span class="n">nbextension</span> <span class="n">enable</span> <span class="o">--</span><span class="n">py</span> <span class="o">--</span><span class="n">sys</span><span class="o">-</span><span class="n">prefix</span> <span class="n">ipyleaflet</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="file-requirements-txt">
+<h3>File: <code class="docutils literal"><span class="pre">requirements.txt</span></code><a class="headerlink" href="#file-requirements-txt" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ipyleaflet</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="system-specifying-runtime-environments">
+<h2>System - Specifying runtime environments<a class="headerlink" href="#system-specifying-runtime-environments" title="Permalink to this headline">¶</a></h2>
+<p>You can specify runtime environments (such as Python 2 or 3) with a
+<code class="docutils literal"><span class="pre">runtime.txt</span></code> file.</p>
+<div class="section" id="id2">
+<h3>File: <code class="docutils literal"><span class="pre">requirements.txt</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">numpy</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="file-runtime-txt">
+<h3>File: <code class="docutils literal"><span class="pre">runtime.txt</span></code><a class="headerlink" href="#file-runtime-txt" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python</span><span class="o">-</span><span class="mf">2.7</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="python-requirements-txt">
+<h2>Python - Requirements.txt<a class="headerlink" href="#python-requirements-txt" title="Permalink to this headline">¶</a></h2>
+<p>The simplest way to specify Python packages is with a <code class="docutils literal"><span class="pre">requirements.txt</span></code> file
+that is compatible with <code class="docutils literal"><span class="pre">pip</span> <span class="pre">install</span></code>.</p>
+<div class="section" id="id3">
+<h3>File: <code class="docutils literal"><span class="pre">requirements.txt</span></code><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">numpy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="julia-require">
+<h2>Julia - REQUIRE<a class="headerlink" href="#julia-require" title="Permalink to this headline">¶</a></h2>
+<p>The simplest way to specify dependencies in Julia, a REQUIRE file simply
+lists the names of packages. Each one will be installed but not pre-compiled.
+In this case, we also specify python dependencies with an <code class="docutils literal"><span class="pre">environment.yml</span></code>
+file.</p>
+<div class="section" id="file-environment-yml">
+<h3>File: <code class="docutils literal"><span class="pre">environment.yml</span></code><a class="headerlink" href="#file-environment-yml" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="p">:</span>
+
+  <span class="o">-</span> <span class="n">matplotlib</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="file-require">
+<h3>File: <code class="docutils literal"><span class="pre">REQUIRE</span></code><a class="headerlink" href="#file-require" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">PyPlot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="docker-specifying-dependencies">
+<h2>Docker - Specifying dependencies<a class="headerlink" href="#docker-specifying-dependencies" title="Permalink to this headline">¶</a></h2>
+<p>You can specify dependencies with Dockerfiles, which may be more flexible
+in running non-standard code. We recommend sourcing your Dockerfile from
+one of the Jupyter base images. In this case, we use a stripped-down image
+that has minimal dependencies installed.</p>
+<div class="section" id="file-dockerfile">
+<h3>File: <code class="docutils literal"><span class="pre">Dockerfile</span></code><a class="headerlink" href="#file-dockerfile" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>FROM jupyter/base-notebook:b4dd11e16ae4
+
+
+
+ARG JUPYTERHUB_VERSION
+
+RUN pip install jupyterhub==$JUPYTERHUB_VERSION
+
+
+
+RUN pip install there
+
+ADD verify verify
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="docker-legacy-dockerfiles">
+<h2>Docker - Legacy Dockerfiles<a class="headerlink" href="#docker-legacy-dockerfiles" title="Permalink to this headline">¶</a></h2>
+<p>This demonstrates the Dockerfile syntax that was often found in the first
+version of Binder. It sources the <code class="docutils literal"><span class="pre">andrewosh</span></code> Docker image, which
+contained many different dependencies, then installs Julia. We encourage
+users to source one of the Jupyter base images as they are more streamlined.</p>
+<div class="section" id="id4">
+<h3>File: <code class="docutils literal"><span class="pre">Dockerfile</span></code><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">FROM</span> <span class="n">andrewosh</span><span class="o">/</span><span class="n">binder</span><span class="o">-</span><span class="n">base</span>
+
+
+
+<span class="n">USER</span> <span class="n">root</span>
+
+
+
+<span class="c1"># Add Julia dependencies</span>
+
+<span class="n">RUN</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
+
+<span class="n">RUN</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">julia</span> <span class="n">libnettle4</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">clean</span>
+
+
+
+<span class="n">USER</span> <span class="n">main</span>
+
+
+
+<span class="c1"># Install Julia kernel</span>
+
+<span class="n">RUN</span> <span class="n">julia</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;Pkg.add(&quot;IJulia&quot;)&#39;</span>
+
+<span class="n">RUN</span> <span class="n">julia</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;Pkg.add(&quot;Gadfly&quot;)&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">julia</span> <span class="o">-</span><span class="n">e</span> <span class="s1">&#39;Pkg.add(&quot;RDatasets&quot;)&#39;</span>
+
+
+
+<span class="n">ADD</span> <span class="n">verify</span> <span class="n">verify</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="docker-running-scripts">
+<h2>Docker - Running scripts<a class="headerlink" href="#docker-running-scripts" title="Permalink to this headline">¶</a></h2>
+<p>It’s possible to run scripts using Docker in your build. In this case, we run
+a simple shell script after installing dependencies. However, we recommend
+that you see if it’s possible to accomplish what you want using <code class="docutils literal"><span class="pre">apt</span></code> and
+<code class="docutils literal"><span class="pre">postInstall</span></code> files, and use Dockerfiles only when necessary.</p>
+<div class="section" id="id5">
+<h3>File: <code class="docutils literal"><span class="pre">Dockerfile</span></code><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>FROM python:3.5
+
+
+
+ARG JUPYTERHUB_VERSION
+
+RUN pip3 install jupyterhub==$JUPYTERHUB_VERSION
+
+
+
+ENTRYPOINT &quot;/bin/sh&quot;
+
+
+
+ADD sayhi.sh /usr/local/bin/sayhi.sh
+
+ADD verify verify
+</pre></div>
+</div>
+</div>
+<div class="section" id="file-sayhi-sh">
+<h3>File: <code class="docutils literal"><span class="pre">sayhi.sh</span></code><a class="headerlink" href="#file-sayhi-sh" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="n">echo</span> <span class="n">hi</span>
+
+<span class="n">exit</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="conda-mixed-requirements">
+<h2>Conda - Mixed Requirements<a class="headerlink" href="#conda-mixed-requirements" title="Permalink to this headline">¶</a></h2>
+<p>An <code class="docutils literal"><span class="pre">environment.yml</span></code> takes precedence over <code class="docutils literal"><span class="pre">requirements.txt</span></code>.
+To install Python packages into a conda environment with pip, use the <code class="docutils literal"><span class="pre">pip</span></code> key in <code class="docutils literal"><span class="pre">environment.yml</span></code>:</p>
+<div class="highlight-yaml"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">dependencies</span><span class="p p-Indicator">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">numpy</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pip</span><span class="p p-Indicator">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tornado</span>
+</pre></div>
+</div>
+<div class="section" id="id6">
+<h3>File: <code class="docutils literal"><span class="pre">environment.yml</span></code><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="p">:</span>
+
+  <span class="o">-</span> <span class="n">numpy</span>
+
+  <span class="o">-</span> <span class="n">pip</span><span class="p">:</span>
+
+    <span class="o">-</span> <span class="n">simplejson</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h3>File: <code class="docutils literal"><span class="pre">requirements.txt</span></code><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">there</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="conda-environment">
+<h2>Conda Environment<a class="headerlink" href="#conda-environment" title="Permalink to this headline">¶</a></h2>
+<p>Conda environments files may allow for more complex builds and dependencies. You
+can specify them in the standard <cite>environment.yml</cite> files.</p>
+<div class="section" id="id8">
+<h3>File: <code class="docutils literal"><span class="pre">environment.yml</span></code><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<p><strong>Contents</strong>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="p">:</span>
+
+  <span class="o">-</span> <span class="n">numpy</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+      </div>
+        
+    </div>
+  </div>
+
+  
+  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+  <script type= "text/javascript">
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+  </script>
+
+
+
+
+
+
+<footer>
+    <div class="custom-footer" role="navigation">
+        <div class="container">
+            <div class="navbar-text">
+                <ul class="footer-text">
+                    <li><a href="http://jupyter.org/index.html">Home</a></li>
+                    
+                      
+                           <li><a href="http://jupyter.org/install.html">Install</a></li>
+                      
+                    
+                      
+                           <li><a href="http://jupyter.org/about.html">About</a></li>
+                      
+                    
+                      
+                           <li><a href="http://jupyter.org/community.html">Resources</a></li>
+                      
+                    
+                      
+                           <li><a href="http://jupyter.org/">Documentation</a></li>
+                      
+                    
+                      
+                           <li><a href="https://nbviewer.jupyter.org" target="_blank">NBViewer</a></li>
+                      
+                    
+                      
+                           <li><a href="http://jupyter.org/widgets.html">Widgets</a></li>
+                      
+                    
+                      
+                           <li><a href="https://blog.jupyter.org" target="_blank">Blog</a></li>
+                      
+                    
+                      
+                           <li><a href="http://jupyter.org/donate.html">Donate</a></li>
+                      
+                    
+                    <p>
+                       Copyright &#169; 2017, Project Jupyter - 
+                      Last updated on Mon, Oct 23, 2017
+                    </p>
+                </ul>
+            </div>
+            <div class="follow">
+                <a class="github-button" href="https://github.com/jupyter" aria-label="Follow @jupyter on GitHub">Follow @jupyter</a>
+                <br><a href="https://twitter.com/ProjectJupyter" class="twitter-follow-button" data-show-count="false">Follow @ProjectJupyter</a>
+            </div>
+        </div>
+    </div>
+</footer>
+  </body>
+</html>

@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Welcome to repo2docker’s documentation! &#8212; repo2docker 0.1 documentation</title>
-    
+    <title>jupyter-repo2docker &#8212; repo2docker 0.1 documentation</title>
     <link rel="stylesheet" href="_static/index.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -29,7 +26,7 @@
     <script type="text/javascript" src="_static/js/mobile-nav.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Creating a New Builder for jupyter-repo2docker" href="builder.html" />
+    <link rel="next" title="repo2docker API" href="api.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -37,7 +34,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
 
@@ -132,7 +129,7 @@
                     
                       <li class="docs-breadcrumb-item"><a href="#"> repo2docker</a><img src="_static/_images/jupytertheme-images/breadcrumb-separator.svg" class="breadcrumb-separator"/></li>
                       
-                      <li class="docs-breadcrumb-item">Welcome to repo2docker&#8217;s documentation!</li>
+                      <li class="docs-breadcrumb-item">jupyter-repo2docker</li>
                     
                 </ul>
             </div>
@@ -151,7 +148,7 @@
       
         <h3 class="mobile-nav-current-section"> repo2docker </h3>
       
-      <h2 class="mobile-nav-current-page"> Welcome to repo2docker&#8217;s documentation! </h2>
+      <h2 class="mobile-nav-current-page"> jupyter-repo2docker </h2>
     </div>
     <div class="top-mobile-nav-expand">
       <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
@@ -176,8 +173,25 @@
         
           
           
-            <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".heading1">
-              <h3 class="mobile-nav-header"> Creating a New Builder for jupyter-repo2docker</h3>
+            <div type = "button" class = "btn mobile-nav-section">
+              <h3 class="mobile-nav-header">
+                <a class="reference internal" href="api.html">repo2docker API</a>
+
+              </h3>
+            </div>
+          
+        
+      </div>
+    
+      
+      
+      <div class="dropdown">
+        
+        
+          
+          
+            <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".heading2">
+              <h3 class="mobile-nav-header"> Sample build files</h3>
               <div class="mobile-nav-expand">
                 <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
               </div>
@@ -187,15 +201,21 @@
         
           
           
-            <ul class = "heading1 collapse mobile-nav-items">
+            <ul class = "heading2 collapse mobile-nav-items">
               <li class = "toctree-l2">
-                <a class="reference internal" href="builder.html">Creating a New Builder for jupyter-repo2docker</a>
+                <a class="reference internal" href="samples.html">Sample build files</a>
               </li>
               
-<li class="toctree-l2"><a class="reference internal" href="builder.html#overview">Overview</a>
-<li class="toctree-l2"><a class="reference internal" href="builder.html#making-a-new-s2i-builder">Making a new s2i builder</a>
-<li class="toctree-l2"><a class="reference internal" href="builder.html#modifying-the-dockerfile">Modifying the Dockerfile</a>
-<li class="toctree-l2"><a class="reference internal" href="builder.html#adding-the-buildpack">Adding the BuildPack</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#system-apt-packages">System - APT Packages</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#system-post-build-scripts">System - Post-build scripts</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#system-specifying-runtime-environments">System - Specifying runtime environments</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#python-requirements-txt">Python - Requirements.txt</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#julia-require">Julia - REQUIRE</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-specifying-dependencies">Docker - Specifying dependencies</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-legacy-dockerfiles">Docker - Legacy Dockerfiles</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-running-scripts">Docker - Running scripts</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#conda-mixed-requirements">Conda - Mixed Requirements</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#conda-environment">Conda Environment</a>
 
 
 
@@ -226,9 +246,9 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="builder.html">Creating a New Builder for jupyter-repo2docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">repo2docker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Sample build files</a></li>
 </ul>
 
 
@@ -237,85 +257,47 @@
       </div>
       <div class="col-sm-8 col-md-9 content">
         
-  <div class="section" id="welcome-to-repo2docker-s-documentation">
-<h1>Welcome to repo2docker&#8217;s documentation!<a class="headerlink" href="#welcome-to-repo2docker-s-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="jupyter-repo2docker">
+<h1>jupyter-repo2docker<a class="headerlink" href="#jupyter-repo2docker" title="Permalink to this headline">¶</a></h1>
+<p><strong>jupyter-repo2docker</strong> is a tool to deterministically build, run, and
+push Docker images from source code repositories. It supports a number of
+build file types that install various aspects of a computational environment.
+For a list of supported build file types, see the list below, as well as
+the <a class="reference internal" href="samples.html#sample-build-files"><span class="std std-ref">Sample build files</span></a>.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>You can install <code class="docutils literal"><span class="pre">repo2docker</span></code> with <code class="docutils literal"><span class="pre">pip</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">repo2docker</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>Call repo2docker with following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">repo2docker</span> <span class="o">&lt;</span><span class="n">path</span><span class="o">-</span><span class="ow">or</span><span class="o">-</span><span class="n">url</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">git</span><span class="o">-</span><span class="n">repo</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>See the <a class="reference internal" href="api.html"><span class="doc">repo2docker API</span></a> for more detail on invoking this command.</p>
+</div>
+<div class="section" id="site-contents">
+<h2>Site Contents<a class="headerlink" href="#site-contents" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="builder.html">Creating a New Builder for jupyter-repo2docker</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="builder.html#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="builder.html#making-a-new-s2i-builder">Making a new s2i builder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="builder.html#modifying-the-dockerfile">Modifying the Dockerfile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="builder.html#adding-the-buildpack">Adding the BuildPack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">repo2docker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Sample build files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#system-apt-packages">System - APT Packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#system-post-build-scripts">System - Post-build scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#system-specifying-runtime-environments">System - Specifying runtime environments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#python-requirements-txt">Python - Requirements.txt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#julia-require">Julia - REQUIRE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-specifying-dependencies">Docker - Specifying dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-legacy-dockerfiles">Docker - Legacy Dockerfiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-running-scripts">Docker - Running scripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#conda-mixed-requirements">Conda - Mixed Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#conda-environment">Conda Environment</a></li>
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
-</ul>
-</div>
-<div class="section" id="build-syntax">
-<h1>Build Syntax<a class="headerlink" href="#build-syntax" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="python-requirements">
-<h2>Python - Requirements<a class="headerlink" href="#python-requirements" title="Permalink to this headline">¶</a></h2>
-<p>This is the simplest way to specify Python requirements. All files should
-follow the specification of <code class="docutils literal"><span class="pre">requirements.txt</span></code>.</p>
-<div class="section" id="environment-yml">
-<h3><code class="docutils literal"><span class="pre">environment.yml</span></code><a class="headerlink" href="#environment-yml" title="Permalink to this headline">¶</a></h3>
-<p><strong>Contents</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="p">:</span>
-
-  <span class="o">-</span> <span class="n">numpy</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="requirements-txt">
-<h3><code class="docutils literal"><span class="pre">requirements.txt</span></code><a class="headerlink" href="#requirements-txt" title="Permalink to this headline">¶</a></h3>
-<p><strong>Contents</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">there</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="python-conda-environment">
-<h2>Python - Conda Environment<a class="headerlink" href="#python-conda-environment" title="Permalink to this headline">¶</a></h2>
-<p>Conda environments files may allow for more complex builds and dependencies. You
-can specify them in the standard YAML structure.</p>
-<div class="section" id="id1">
-<h3><code class="docutils literal"><span class="pre">environment.yml</span></code><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p><strong>Contents</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="p">:</span>
-
-  <span class="o">-</span> <span class="n">numpy</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="julia-require">
-<h2>Julia - REQUIRE<a class="headerlink" href="#julia-require" title="Permalink to this headline">¶</a></h2>
-<p>The simplest way to specify dependencies in Julia, a REQUIRE file simply
-lists the names of packages. Each one will be installed but not pre-compiled.</p>
-<div class="section" id="id2">
-<h3><code class="docutils literal"><span class="pre">environment.yml</span></code><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<p><strong>Contents</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">dependencies</span><span class="p">:</span>
-
-  <span class="o">-</span> <span class="n">matplotlib</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="require">
-<h3><code class="docutils literal"><span class="pre">REQUIRE</span></code><a class="headerlink" href="#require" title="Permalink to this headline">¶</a></h3>
-<p><strong>Contents</strong>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">PyPlot</span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -378,7 +360,7 @@ lists the names of packages. Each one will be installed but not pre-compiled.</p
                     
                     <p>
                        Copyright &#169; 2017, Project Jupyter - 
-                      Last updated on Tue, Aug 01, 2017
+                      Last updated on Mon, Oct 23, 2017
                     </p>
                 </ul>
             </div>

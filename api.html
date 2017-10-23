@@ -5,12 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>repo2docker API &#8212; repo2docker 0.1 documentation</title>
-    
     <link rel="stylesheet" href="_static/index.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -29,8 +26,8 @@
     <script type="text/javascript" src="_static/js/mobile-nav.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="repo2docker.app.Repo2Docker" href="generated/repo2docker.app.Repo2Docker.html" />
-    <link rel="prev" title="Creating a New Builder for jupyter-repo2docker" href="builder.html" />
+    <link rel="next" title="Sample build files" href="samples.html" />
+    <link rel="prev" title="jupyter-repo2docker" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -179,91 +176,47 @@
           
             <div type = "button" class = "btn mobile-nav-section">
               <h3 class="mobile-nav-header">
-                <a class="reference internal" href="overview.html">Overview</a>
-
-              </h3>
-            </div>
-          
-        
-      </div>
-    
-      
-      
-      <div class="dropdown">
-        
-        
-          
-          
-            <div type = "button" class = "btn mobile-nav-section">
-              <h3 class="mobile-nav-header">
-                <a class="reference internal" href="use.html">Using repo2docker</a>
-
-              </h3>
-            </div>
-          
-        
-      </div>
-    
-      
-      
-      <div class="dropdown">
-        
-        
-          
-          
-            <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".heading3">
-              <h3 class="mobile-nav-header"> Creating a New Builder for jupyter-repo2docker</h3>
-              <div class="mobile-nav-expand">
-                <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
-              </div>
-            </div>
-          
-          
-        
-          
-          
-            <ul class = "heading3 collapse mobile-nav-items">
-              <li class = "toctree-l2">
-                <a class="reference internal" href="builder.html">Creating a New Builder for jupyter-repo2docker</a>
-              </li>
-              
-<li class="toctree-l2"><a class="reference internal" href="builder.html#making-a-new-s2i-builder">Making a new s2i builder</a>
-<li class="toctree-l2"><a class="reference internal" href="builder.html#modifying-the-dockerfile">Modifying the Dockerfile</a>
-<li class="toctree-l2"><a class="reference internal" href="builder.html#adding-the-buildpack">Adding the BuildPack</a>
-<li class="toctree-l2"><a class="reference internal" href="builder.html#building-testing-your-builder">Building / testing your builder</a>
-
-
-
-            </ul>
-          
-        
-      </div>
-    
-      
-      
-      <div class="dropdown">
-        
-        
-          
-          
-            <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".heading4">
-              <h3 class="mobile-nav-header"> repo2docker API</h3>
-              <div class="mobile-nav-expand">
-                <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
-              </div>
-            </div>
-          
-          
-        
-          
-          
-            <ul class = "heading4 collapse mobile-nav-items">
-              <li class = "toctree-l2">
                 <a class="current reference internal" href="#">repo2docker API</a>
+
+              </h3>
+            </div>
+          
+        
+      </div>
+    
+      
+      
+      <div class="dropdown">
+        
+        
+          
+          
+            <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".heading2">
+              <h3 class="mobile-nav-header"> Sample build files</h3>
+              <div class="mobile-nav-expand">
+                <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
+              </div>
+            </div>
+          
+          
+        
+          
+          
+            <ul class = "heading2 collapse mobile-nav-items">
+              <li class = "toctree-l2">
+                <a class="reference internal" href="samples.html">Sample build files</a>
               </li>
               
-<li class="toctree-l2"><a class="reference internal" href="generated/repo2docker.app.Repo2Docker.html">repo2docker.app.Repo2Docker</a>
-<li class="toctree-l2"><a class="reference internal" href="#builders">Builders</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#system-apt-packages">System - APT Packages</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#system-post-build-scripts">System - Post-build scripts</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#system-specifying-runtime-environments">System - Specifying runtime environments</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#python-requirements-txt">Python - Requirements.txt</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#julia-require">Julia - REQUIRE</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-specifying-dependencies">Docker - Specifying dependencies</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-legacy-dockerfiles">Docker - Legacy Dockerfiles</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-running-scripts">Docker - Running scripts</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#conda-mixed-requirements">Conda - Mixed Requirements</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#conda-environment">Conda Environment</a>
 
 
 
@@ -294,16 +247,9 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-<p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="use.html">Using repo2docker</a></li>
-<li class="toctree-l1"><a class="reference internal" href="builder.html">Creating a New Builder for jupyter-repo2docker</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">repo2docker API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="generated/repo2docker.app.Repo2Docker.html">repo2docker.app.Repo2Docker</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#builders">Builders</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">repo2docker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Sample build files</a></li>
 </ul>
 
 
@@ -313,44 +259,53 @@
       <div class="col-sm-8 col-md-9 content">
         
   <div class="section" id="repo2docker-api">
-<span id="api"></span><h1>repo2docker API<a class="headerlink" href="#repo2docker-api" title="Permalink to this headline">¶</a></h1>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/repo2docker.app.Repo2Docker.html#repo2docker.app.Repo2Docker" title="repo2docker.app.Repo2Docker"><code class="xref py py-obj docutils literal"><span class="pre">repo2docker.app.Repo2Docker</span></code></a>(**kwargs)</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<div class="section" id="builders">
-<h2>Builders<a class="headerlink" href="#builders" title="Permalink to this headline">¶</a></h2>
-<table border="1" class="longtable docutils">
-<colgroup>
-<col width="10%" />
-<col width="90%" />
-</colgroup>
-<tbody valign="top">
-<tr class="row-odd"><td><a class="reference internal" href="generated/repo2docker.detectors.BuildPack.html#repo2docker.detectors.BuildPack" title="repo2docker.detectors.BuildPack"><code class="xref py py-obj docutils literal"><span class="pre">repo2docker.detectors.BuildPack</span></code></a>(**kwargs)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/repo2docker.detectors.DockerBuildPack.html#repo2docker.detectors.DockerBuildPack" title="repo2docker.detectors.DockerBuildPack"><code class="xref py py-obj docutils literal"><span class="pre">repo2docker.detectors.DockerBuildPack</span></code></a>(**kwargs)</td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/repo2docker.detectors.S2IBuildPack.html#repo2docker.detectors.S2IBuildPack" title="repo2docker.detectors.S2IBuildPack"><code class="xref py py-obj docutils literal"><span class="pre">repo2docker.detectors.S2IBuildPack</span></code></a>(**kwargs)</td>
-<td></td>
-</tr>
-<tr class="row-even"><td><a class="reference internal" href="generated/repo2docker.detectors.CondaBuildPack.html#repo2docker.detectors.CondaBuildPack" title="repo2docker.detectors.CondaBuildPack"><code class="xref py py-obj docutils literal"><span class="pre">repo2docker.detectors.CondaBuildPack</span></code></a>(**kwargs)</td>
-<td>Build Pack for installing from a conda environment.yml using S2I</td>
-</tr>
-<tr class="row-odd"><td><a class="reference internal" href="generated/repo2docker.detectors.PythonBuildPack.html#repo2docker.detectors.PythonBuildPack" title="repo2docker.detectors.PythonBuildPack"><code class="xref py py-obj docutils literal"><span class="pre">repo2docker.detectors.PythonBuildPack</span></code></a>(**kwargs)</td>
-<td>Build Pack for installing from a pip requirements.txt using S2I</td>
-</tr>
-</tbody>
-</table>
+<h1>repo2docker API<a class="headerlink" href="#repo2docker-api" title="Permalink to this headline">¶</a></h1>
+<p>The following arguments may be given in the call to:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">repo2docker</span> <span class="o">&lt;</span><span class="n">path</span><span class="o">-</span><span class="ow">or</span><span class="o">-</span><span class="n">url</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">git</span><span class="o">-</span><span class="n">repo</span><span class="o">&gt;</span>
+</pre></div>
 </div>
+<dl class="class">
+<dt id="repo2docker.app.Repo2Docker">
+<em class="property">class </em><code class="descclassname">repo2docker.app.</code><code class="descname">Repo2Docker</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#repo2docker.app.Repo2Docker" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt>
+<code class="descname">config c.Repo2Docker.buildpacks = List()</code></dt>
+<dd><p>Ordered list of BuildPacks to try to use to build a git repository.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">config c.Repo2Docker.default_buildpack = Tuple()</code></dt>
+<dd><p>The build pack to use when no buildpacks are found</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">config c.Repo2Docker.git_workdir = Unicode('/tmp')</code></dt>
+<dd><p>The directory to use to check out git repositories into.</p>
+<p>Should be somewhere ephemeral, such as /tmp</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">config c.Repo2Docker.log_datefmt = Unicode('%Y-%m-%d %H:%M:%S')</code></dt>
+<dd><p>The date format used by logging formatters for %(asctime)s</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">config c.Repo2Docker.log_format = Unicode('[%(name)s]%(highlevel)s %(message)s')</code></dt>
+<dd><p>The Logging format template</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt>
+<code class="descname">config c.Repo2Docker.log_level = Enum(30)</code></dt>
+<dd><p>Set the log level by value or name.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 
 
@@ -411,7 +366,7 @@
                     
                     <p>
                        Copyright &#169; 2017, Project Jupyter - 
-                      Last updated on Fri, Jun 02, 2017
+                      Last updated on Mon, Oct 23, 2017
                     </p>
                 </ul>
             </div>

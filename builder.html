@@ -1,16 +1,13 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Creating a New Builder for jupyter-repo2docker &#8212; repo2docker 0.1 documentation</title>
-    
     <link rel="stylesheet" href="_static/index.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -29,7 +26,6 @@
     <script type="text/javascript" src="_static/js/mobile-nav.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to repo2docker’s documentation!" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -37,7 +33,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
   </head>
-  <body role="document">
+  <body>
   
 
 
@@ -177,7 +173,7 @@
           
           
             <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".heading1">
-              <h3 class="mobile-nav-header"> Creating a New Builder for jupyter-repo2docker</h3>
+              <h3 class="mobile-nav-header"> repo2docker API</h3>
               <div class="mobile-nav-expand">
                 <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
               </div>
@@ -189,13 +185,51 @@
           
             <ul class = "heading1 collapse mobile-nav-items">
               <li class = "toctree-l2">
-                <a class="current reference internal" href="#">Creating a New Builder for jupyter-repo2docker</a>
+                <a class="reference internal" href="api.html">repo2docker API</a>
               </li>
               
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
-<li class="toctree-l2"><a class="reference internal" href="#making-a-new-s2i-builder">Making a new s2i builder</a>
-<li class="toctree-l2"><a class="reference internal" href="#modifying-the-dockerfile">Modifying the Dockerfile</a>
-<li class="toctree-l2"><a class="reference internal" href="#adding-the-buildpack">Adding the BuildPack</a>
+<li class="toctree-l2"><a class="reference internal" href="api.html#class-repo2docker-repo2docker">Class: <code class="docutils literal"><span class="pre">repo2docker.Repo2Docker</span></code></a>
+
+
+
+            </ul>
+          
+        
+      </div>
+    
+      
+      
+      <div class="dropdown">
+        
+        
+          
+          
+            <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".heading2">
+              <h3 class="mobile-nav-header"> Sample build files</h3>
+              <div class="mobile-nav-expand">
+                <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
+              </div>
+            </div>
+          
+          
+        
+          
+          
+            <ul class = "heading2 collapse mobile-nav-items">
+              <li class = "toctree-l2">
+                <a class="reference internal" href="samples.html">Sample build files</a>
+              </li>
+              
+<li class="toctree-l2"><a class="reference internal" href="samples.html#system-apt-packages">System - APT Packages</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#system-post-build-scripts">System - Post-build scripts</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#system-specifying-runtime-environments">System - Specifying runtime environments</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#python-requirements-txt">Python - Requirements.txt</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#julia-require">Julia - REQUIRE</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-specifying-dependencies">Docker - Specifying dependencies</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-legacy-dockerfiles">Docker - Legacy Dockerfiles</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-running-scripts">Docker - Running scripts</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#conda-mixed-requirements">Conda - Mixed Requirements</a>
+<li class="toctree-l2"><a class="reference internal" href="samples.html#conda-environment">Conda Environment</a>
 
 
 
@@ -226,15 +260,9 @@
     </form>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
-<p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Creating a New Builder for jupyter-repo2docker</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#making-a-new-s2i-builder">Making a new s2i builder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#modifying-the-dockerfile">Modifying the Dockerfile</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#adding-the-buildpack">Adding the BuildPack</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">repo2docker API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Sample build files</a></li>
 </ul>
 
 
@@ -267,7 +295,7 @@ the appropriate, matching builder image</li>
 <ol>
 <li><p class="first">Choose a name for a new builder, <code class="docutils literal"><span class="pre">buildername</span></code>. Typically, the <code class="docutils literal"><span class="pre">buildername</span></code>
 will correspond to a package manager name.</p>
-<p>For example, let&#8217;s choose <code class="docutils literal"><span class="pre">npm</span></code> as the <code class="docutils literal"><span class="pre">buildername</span></code>.</p>
+<p>For example, let's choose <code class="docutils literal"><span class="pre">npm</span></code> as the <code class="docutils literal"><span class="pre">buildername</span></code>.</p>
 </li>
 <li><p class="first">To get started creating a builder, run the <code class="docutils literal"><span class="pre">s2i</span> <span class="pre">create</span></code> command. From the
 <code class="docutils literal"><span class="pre">s2i-builders</span></code> directory, run:</p>
@@ -387,7 +415,7 @@ specifying a source repo URL with this command:</p>
                     
                     <p>
                        Copyright &#169; 2017, Project Jupyter - 
-                      Last updated on Mon, Jul 31, 2017
+                      Last updated on Mon, Oct 23, 2017
                     </p>
                 </ul>
             </div>
