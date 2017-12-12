@@ -1,0 +1,180 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Design &#8212; repo2docker 0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Frequently Asked Questions (FAQ)" href="faq.html" />
+    <link rel="prev" title="Using repo2docker" href="usage.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="design">
+<span id="design"></span><h1>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h1>
+<p>Two primary use cases for <code class="docutils literal"><span class="pre">repo2docker</span></code> drive most design decisions:</p>
+<ol class="simple">
+<li>Automated image building used by projects like
+<a class="reference external" href="http://github.com/jupyterhub/binderhub">BinderHub</a></li>
+<li>Manual image building and running the image from the command line client,
+<code class="docutils literal"><span class="pre">jupyter-repo2docker</span></code>, by users interactively on their workstations</li>
+</ol>
+<p>We share our guiding design principles here. This is not an exhaustive
+list :)</p>
+<div class="section" id="deterministic-output">
+<span id="deterministic-output"></span><h2>Deterministic output<a class="headerlink" href="#deterministic-output" title="Permalink to this headline">¶</a></h2>
+<p>The core of <code class="docutils literal"><span class="pre">repo2docker</span></code> can be considered a
+<a class="reference external" href="https://en.wikipedia.org/wiki/Deterministic_algorithm">deterministic algorithm</a>.
+When given an input directory which has a particular repository checked out, it
+deterministically produces a Dockerfile based on the contents of the directory.
+So if we run <code class="docutils literal"><span class="pre">repo2docker</span></code> on the same directory multiple times, we get the
+exact same Dockerfile output.</p>
+<p>This provides a few advantages:</p>
+<ol class="simple">
+<li>Reuse of cached built artifacts based on a repository's identity increases
+efficiency and reliability. For example, if we had already run <code class="docutils literal"><span class="pre">reop2docker</span></code>
+on a git repository at a particular commit hash, we know we can just re-use
+the old output, since we know it is going to be the same. This provides
+massive performance &amp; architectural advantages when building additional
+tools (like BinderHub) on top of <code class="docutils literal"><span class="pre">reop2docker</span></code>.</li>
+<li>We produce Dockerfiles that have as much in common as possible across
+multiple repositories, enabling better use of the Docker build cache. This
+also provides massive performance advantages.</li>
+</ol>
+</div>
+<div class="section" id="unix-principles-do-one-thing-well">
+<span id="unix-principles-do-one-thing-well"></span><h2>Unix principles &quot;do one thing well&quot;<a class="headerlink" href="#unix-principles-do-one-thing-well" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">repo2docker</span></code> should do one thing, and do it well. This one thing is:</p>
+<blockquote>
+<div>Given a repository, deterministically build a docker image from
+it.</div></blockquote>
+<p>There's also some convenience code (to run the built image) for users, but
+that's separated out cleanly. This allows easy use by other projects (like
+BinderHub).</p>
+<p>There is additional (and very useful) design advice on this in
+the <a class="reference external" href="http://www.faqs.org/docs/artu/ch01s06.html">Art of Unix Programming</a> which
+is a highly recommended quick read.</p>
+</div>
+<div class="section" id="composability">
+<span id="composability"></span><h2>Composability<a class="headerlink" href="#composability" title="Permalink to this headline">¶</a></h2>
+<p>Although other projects, like
+<a class="reference external" href="https://github.com/openshift/source-to-image">s2i</a>, exist to convert source to
+Docker images, <code class="docutils literal"><span class="pre">repo2docker</span></code> provides the additional functionality to support
+<em>composable</em> environments. We want to easily have an image with
+Python3+Julia+R-3.2 environments, rather than just one single language
+environment. While generally one language environment per container works well,
+in many scientific / datascience computing environments you need multiple
+languages working together to get anything done. So all buildpacks are
+composable, and need to be able to work well with other languages.</p>
+</div>
+<div class="section" id="pareto-principle-the-80-20-rule">
+<span id="pareto-principle-the-80-20-rule"></span><h2><a class="reference external" href="https://en.wikipedia.org/wiki/Pareto_principle">Pareto principle</a> (The 80-20 Rule)<a class="headerlink" href="#pareto-principle-the-80-20-rule" title="Permalink to this headline">¶</a></h2>
+<p>Roughly speaking, we want to support 80% of use cases, and provide an escape
+hatch (raw Dockerfiles) for the other 20%. We explicitly want to provide support
+only for the most common use cases - covering every possible use case never ends
+well.</p>
+<p>An easy process for getting support for more languages here is to demonstrate
+their value with Dockerfiles that other people can use, and then show that this
+pattern is popular enough to be included inside <code class="docutils literal"><span class="pre">reop2docker</span></code>. Remember that 'yes'
+is forever (very hard to remove features!), but 'no' is only temporary!</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.svg" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Design</a><ul>
+<li><a class="reference internal" href="#deterministic-output">Deterministic output</a></li>
+<li><a class="reference internal" href="#unix-principles-do-one-thing-well">Unix principles &quot;do one thing well&quot;</a></li>
+<li><a class="reference internal" href="#composability">Composability</a></li>
+<li><a class="reference internal" href="#pareto-principle-the-80-20-rule">Pareto principle (The 80-20 Rule)</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="usage.html" title="previous chapter">Using <code class="docutils literal"><span class="pre">repo2docker</span></code></a></li>
+      <li>Next: <a href="faq.html" title="next chapter">Frequently Asked Questions (FAQ)</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/design.md.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Project Jupyter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/design.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

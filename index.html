@@ -6,8 +6,9 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>jupyter-repo2docker &#8212; repo2docker 0.1 documentation</title>
-    <link rel="stylesheet" href="_static/index.css" type="text/css" />
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -21,12 +22,10 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="_static/js/scroll.js"></script>
-    <script type="text/javascript" src="_static/js/mobile-nav.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="repo2docker API" href="api.html" />
+    <link rel="next" title="Installing repo2docker" href="install.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -37,254 +36,44 @@
   <body>
   
 
-
-<nav class="navbar navbar-fixed-top" role="navigation" id="navbar" >
-        <div class="navbar-inner">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="http://jupyter.org/index.html">
-                  <img class="navbar-logo" src="_static/_images/nav_logo.svg" alt="Jupyter logo">
-                </a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    
-                      
-                        
-                          <li>
-                            <a href="http://jupyter.org/install.html" class="tab">Install</a>
-                          </li>
-                        
-                      
-                    
-                      
-                        
-                          <li>
-                            <a href="http://jupyter.org/about.html" class="tab">About</a>
-                          </li>
-                        
-                      
-                    
-                      
-                        
-                          <li>
-                            <a href="http://jupyter.org/community.html" class="tab">Resources</a>
-                          </li>
-                        
-                      
-                    
-                      
-                        
-                          <li>
-                            <a href="#"  class="tab navbar-active">Documentation</a>
-                          </li>
-                        
-                      
-                    
-                      
-                           <li>
-                             <a href=https://nbviewer.jupyter.org class="tab" target="_blank">NBViewer</a>
-                           </li>
-                      
-                    
-                      
-                        
-                          <li>
-                            <a href="http://jupyter.org/widgets.html" class="tab">Widgets</a>
-                          </li>
-                        
-                      
-                    
-                      
-                           <li>
-                             <a href=https://blog.jupyter.org class="tab" target="_blank">Blog</a>
-                           </li>
-                      
-                    
-                      
-                        
-                          <li>
-                            <a href="http://jupyter.org/donate.html" class="tab">Donate</a>
-                          </li>
-                        
-                      
-                    
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-        <div class="docs-breadcrumbs">
-            <div class="container">
-                <ul>
-                    <li class="docs-breadcrumb-item"><a href="https://jupyter.org"><img src="_static/_images/jupytertheme-images/breadcrumb-home.svg" / class="breadcrumb-home"></a><img src="_static/_images/jupytertheme-images/breadcrumb-separator.svg" class="breadcrumb-separator"/></li>
-                    
-                      <li class="docs-breadcrumb-item"><a href="#"> repo2docker</a><img src="_static/_images/jupytertheme-images/breadcrumb-separator.svg" class="breadcrumb-separator"/></li>
-                      
-                      <li class="docs-breadcrumb-item">jupyter-repo2docker</li>
-                    
-                </ul>
-            </div>
-        </div>
-    </div>
-</nav>
-  <div class="container">
-    <div class = "docs-mobile-nav">
-      
-
-<div>
-  
-  
-  <div class="mobile-nav-current-dropdown" data-toggle = "collapse" data-target = "#sectionList">
-    <div class="mobile-nav-current">
-      
-        <h3 class="mobile-nav-current-section"> repo2docker </h3>
-      
-      <h2 class="mobile-nav-current-page"> jupyter-repo2docker </h2>
-    </div>
-    <div class="top-mobile-nav-expand">
-      <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
-    </div>
-  </div>
-
-  <div id="sectionList" class="collapse">
-    <div class="dropdown">
-      
-      <div type = "button" class = "btn mobile-nav-section">
-        <h3 class="mobile-nav-header">
-          <a href="#">repo2docker</a>
-        </h3>
-      </div>
-    </div>
-    
-    
-      
-      
-      <div class="dropdown">
-        
-        
-          
-          
-            <div type = "button" class = "btn mobile-nav-section">
-              <h3 class="mobile-nav-header">
-                <a class="reference internal" href="api.html">repo2docker API</a>
-
-              </h3>
-            </div>
-          
-        
-      </div>
-    
-      
-      
-      <div class="dropdown">
-        
-        
-          
-          
-            <div type = "button" class = "btn dropdown mobile-nav-section" data-toggle = "collapse" data-target = ".heading2">
-              <h3 class="mobile-nav-header"> Sample build files</h3>
-              <div class="mobile-nav-expand">
-                <img class="mobile-nav-expand-icon" src="_static/_images/jupytertheme-images/expand.svg" alt="expand icon"/>
-              </div>
-            </div>
-          
-          
-        
-          
-          
-            <ul class = "heading2 collapse mobile-nav-items">
-              <li class = "toctree-l2">
-                <a class="reference internal" href="samples.html">Sample build files</a>
-              </li>
-              
-<li class="toctree-l2"><a class="reference internal" href="samples.html#system-apt-packages">System - APT Packages</a>
-<li class="toctree-l2"><a class="reference internal" href="samples.html#system-post-build-scripts">System - Post-build scripts</a>
-<li class="toctree-l2"><a class="reference internal" href="samples.html#system-specifying-runtime-environments">System - Specifying runtime environments</a>
-<li class="toctree-l2"><a class="reference internal" href="samples.html#python-requirements-txt">Python - Requirements.txt</a>
-<li class="toctree-l2"><a class="reference internal" href="samples.html#julia-require">Julia - REQUIRE</a>
-<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-specifying-dependencies">Docker - Specifying dependencies</a>
-<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-legacy-dockerfiles">Docker - Legacy Dockerfiles</a>
-<li class="toctree-l2"><a class="reference internal" href="samples.html#docker-running-scripts">Docker - Running scripts</a>
-<li class="toctree-l2"><a class="reference internal" href="samples.html#conda-mixed-requirements">Conda - Mixed Requirements</a>
-<li class="toctree-l2"><a class="reference internal" href="samples.html#conda-environment">Conda Environment</a>
-
-
-
-
-            </ul>
-          
-        
-      </div>
-    
-  </div>
-</div>
-    </div>
-    <div class="row">
-      <div class="docs-desktop-nav">
-      <div class="col-sm-4 col-md-3">
-        <div id="sidebar" class="bs-sidenav" role="complementary"><h1>
-  <a href="#">repo2docker</a>
-</h1>
-
-<div id="searchbox" role="search">
-    <form class="search" action="search.html" method="get">
-      <div>
-        <input type="text" placeholder= "Search" class="docs-search-input" name="q" />
-        <input type="submit" class="docs-search-submit" value="" />
-      </div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="api.html">repo2docker API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="samples.html">Sample build files</a></li>
-</ul>
-
-
-        </div>
-      </div>
-      </div>
-      <div class="col-sm-8 col-md-9 content">
-        
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
   <div class="section" id="jupyter-repo2docker">
 <h1>jupyter-repo2docker<a class="headerlink" href="#jupyter-repo2docker" title="Permalink to this headline">¶</a></h1>
-<p><strong>jupyter-repo2docker</strong> is a tool to deterministically build, run, and
-push Docker images from source code repositories. It supports a number of
-build file types that install various aspects of a computational environment.
-For a list of supported build file types, see the list below, as well as
-the <a class="reference internal" href="samples.html#sample-build-files"><span class="std std-ref">Sample build files</span></a>.</p>
-<div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<p>You can install <code class="docutils literal"><span class="pre">repo2docker</span></code> with <code class="docutils literal"><span class="pre">pip</span></code>:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">repo2docker</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
-<p>Call repo2docker with following command:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">jupyter</span><span class="o">-</span><span class="n">repo2docker</span> <span class="o">&lt;</span><span class="n">path</span><span class="o">-</span><span class="ow">or</span><span class="o">-</span><span class="n">url</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">git</span><span class="o">-</span><span class="n">repo</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p>See the <a class="reference internal" href="api.html"><span class="doc">repo2docker API</span></a> for more detail on invoking this command.</p>
-</div>
+<p><strong>jupyter-repo2docker</strong> is a tool to build, run, and push Docker
+images from source code repositories. See the list below for various
+ways in which you can use <code class="docutils literal"><span class="pre">repo2docker</span></code>.</p>
 <div class="section" id="site-contents">
 <h2>Site Contents<a class="headerlink" href="#site-contents" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="api.html">repo2docker API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="samples.html">Sample build files</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Installing <code class="docutils literal"><span class="pre">repo2docker</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install.html#installing-repo2docker-from-source-code">Installing repo2docker from source code</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Using <code class="docutils literal"><span class="pre">repo2docker</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#preparing-your-repository">Preparing your repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#running-repo2docker-locally">Running <code class="docutils literal"><span class="pre">repo2docker</span></code> locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#displaying-the-image-dockerfile">Displaying the image Dockerfile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#accessing-help-from-the-command-line">Accessing help from the command line</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="design.html">Design</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="design.html#deterministic-output">Deterministic output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html#unix-principles-do-one-thing-well">Unix principles &quot;do one thing well&quot;</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html#composability">Composability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="design.html#pareto-principle-the-80-20-rule">Pareto principle (The 80-20 Rule)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently Asked Questions (FAQ)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#how-should-i-specify-another-version-of-python-3">How should I specify another version of Python 3?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#can-i-use-repo2docker-to-bootstrap-my-own-dockerfile">Can I use repo2docker to bootstrap my own Dockerfile?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="samples.html">Sample build repositories</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="samples.html#system-apt-packages">System - APT Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="samples.html#system-post-build-scripts">System - Post-build scripts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="samples.html#system-specifying-runtime-environments">System - Specifying runtime environments</a></li>
@@ -303,73 +92,64 @@ the <a class="reference internal" href="samples.html#sample-build-files"><span c
 </div>
 
 
-      </div>
-        
-    </div>
-  </div>
-
-  
-  <script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
-  <script type= "text/javascript">
-    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-  </script>
-
-
-
-
-
-
-<footer>
-    <div class="custom-footer" role="navigation">
-        <div class="container">
-            <div class="navbar-text">
-                <ul class="footer-text">
-                    <li><a href="http://jupyter.org/index.html">Home</a></li>
-                    
-                      
-                           <li><a href="http://jupyter.org/install.html">Install</a></li>
-                      
-                    
-                      
-                           <li><a href="http://jupyter.org/about.html">About</a></li>
-                      
-                    
-                      
-                           <li><a href="http://jupyter.org/community.html">Resources</a></li>
-                      
-                    
-                      
-                           <li><a href="http://jupyter.org/">Documentation</a></li>
-                      
-                    
-                      
-                           <li><a href="https://nbviewer.jupyter.org" target="_blank">NBViewer</a></li>
-                      
-                    
-                      
-                           <li><a href="http://jupyter.org/widgets.html">Widgets</a></li>
-                      
-                    
-                      
-                           <li><a href="https://blog.jupyter.org" target="_blank">Blog</a></li>
-                      
-                    
-                      
-                           <li><a href="http://jupyter.org/donate.html">Donate</a></li>
-                      
-                    
-                    <p>
-                       Copyright &#169; 2017, Project Jupyter - 
-                      Last updated on Mon, Oct 23, 2017
-                    </p>
-                </ul>
-            </div>
-            <div class="follow">
-                <a class="github-button" href="https://github.com/jupyter" aria-label="Follow @jupyter on GitHub">Follow @jupyter</a>
-                <br><a href="https://twitter.com/ProjectJupyter" class="twitter-follow-button" data-show-count="false">Follow @ProjectJupyter</a>
-            </div>
+          </div>
         </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/logo.svg" alt="Logo"/>
+            </a></p>
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">jupyter-repo2docker</a><ul>
+<li><a class="reference internal" href="#site-contents">Site Contents</a></li>
+</ul>
+</li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="install.html" title="next chapter">Installing <code class="docutils literal"><span class="pre">repo2docker</span></code></a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
     </div>
-</footer>
+    <div class="footer">
+      &copy;2017, Project Jupyter.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
   </body>
 </html>
