@@ -45,6 +45,10 @@ Bug fixes
 - Ensure ENTRYPOINT is an absolute path in :pr:`657` by :user:`yuvipanda`.
 - Fix handling of `--build-memory-limit` values without a postfix in :pr:`652`
   by :user:`betatim`.
+- Create a page naming and describing the "Reproducible Execution
+  Environment Specification" (the specification used by repo2docker)
+  in :pr:`656` by :user:`choldgraf`.
+
 
 
 Version 0.8.0
