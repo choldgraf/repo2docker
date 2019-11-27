@@ -1,96 +1,514 @@
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Index &#8212; repo2docker 0.1 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <meta charset="utf-8" />
+    <title>Index &#8212; repo2docker 0.10.0 documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="_static/sphinx-bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link href="_static/css/custom.css" rel="stylesheet">
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="#" />
     <link rel="search" title="Search" href="search.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+
+<a class="navbar-brand" href="index.html">
+  <img src="_static/logo.png" class="logo" alt="logo">
+</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div id="navbar-menu" class="collapse navbar-collapse">
+  <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+    </li>
+    
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="getting-started/index.html">Getting Started</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="howto/index.html">How-to Guides</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="configuration/index.html">Configuring your repository</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="contributing/index.html">Contributing</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="changelog.html">Changelog</a>
+    </li>
+    
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="https://github.com/pandas-dev/pandas" target="_blank" rel="noopener">
+        <span><i class="fab fa-github-alt" style="color:#333;font-size:1rem;line-height:1.25"></i></span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://twitter.com/pandas_dev" target="_blank" rel="noopener">
+        <span><i class="fab fa-twitter" style="color:#55acee;font-size:1rem;line-height:1.25"></i></span>
+      </a>
+    </li>
+  </ul>
+</div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+              
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
   
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+
+</nav>
+
+
+              
+          </div>
+
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+    </ul>
+</nav>
+              
+            </div>
+
+          <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+              <div>
+                
 
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
+ <a href="#Symbols"><strong>Symbols</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#J"><strong>J</strong></a>
+ | <a href="#R"><strong>R</strong></a>
  
 </div>
+<h2 id="Symbols">Symbols</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    --appendix &lt;appendix&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-appendix">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --build-memory-limit &lt;build_memory_limit&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-build-memory-limit">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --cache-from &lt;cache_from&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-cache-from">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --config &lt;config&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-config">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --debug
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-debug">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --editable
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-editable">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --env &lt;environment&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-env">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --help
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-h">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --image-name &lt;image_name&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-image-name">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --json-logs
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-json-logs">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --no-build
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-no-build">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --no-clean
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-no-clean">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --no-run
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-no-run">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --publish &lt;ports&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-publish">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --publish-all
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-publish-all">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    --push
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-push">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --ref &lt;ref&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-ref">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --subdir &lt;subdir&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-subdir">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --target-repo-dir &lt;target_repo_dir&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-target-repo-dir">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --user-id &lt;user_id&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-user-id">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --user-name &lt;user_name&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-user-name">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --version
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-version">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --volume &lt;volumes&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-volume">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -E
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-editable">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -e &lt;environment&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-env">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -h
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-h">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -P
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-publish-all">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -p &lt;ports&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-publish">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+      <li>
+    -v &lt;volumes&gt;
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-volume">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    cmd
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-arg-cmd">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="J">J</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    jupyter-repo2docker command line option
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-appendix">--appendix &lt;appendix&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-build-memory-limit">--build-memory-limit &lt;build_memory_limit&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-cache-from">--cache-from &lt;cache_from&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-config">--config &lt;config&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-debug">--debug</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-editable">--editable</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-env">--env &lt;environment&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-h">--help</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-image-name">--image-name &lt;image_name&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-json-logs">--json-logs</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-no-build">--no-build</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-no-clean">--no-clean</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-no-run">--no-run</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-publish">--publish &lt;ports&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-publish-all">--publish-all</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-push">--push</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-ref">--ref &lt;ref&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-subdir">--subdir &lt;subdir&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-target-repo-dir">--target-repo-dir &lt;target_repo_dir&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-user-id">--user-id &lt;user_id&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-user-name">--user-name &lt;user_name&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-version">--version</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-volume">--volume &lt;volumes&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-editable">-E</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-env">-e &lt;environment&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-h">-h</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-publish-all">-P</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-publish">-p &lt;ports&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-volume">-v &lt;volumes&gt;</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-arg-cmd">cmd</a>
+</li>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-arg-repo">repo</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    repo
+
+      <ul>
+        <li><a href="usage.html#cmdoption-jupyter-repo2docker-arg-repo">jupyter-repo2docker command line option</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
 
 
-          </div>
-        </div>
+
+              </div>
+              <div class='prev-next-bottom'>
+                
+
+              </div>
+          </main>
+
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="index.html">
-              <img class="logo" src="_static/logo.svg" alt="Logo"/>
-            </a></p>
+    </div><script>
+    // TOC sidebar - add "active" class to parent list
+    //
+    // Bootstrap's scrollspy adds the active class to the <a> link,
+    // but for the automatic collapsing we need this on the parent list item.
+    //
+    // The event is triggered on "window" (and not the nav item as documented),
+    // see https://github.com/twbs/bootstrap/issues/20086
+    $(window).on("activate.bs.scrollspy", function(){
+    var navLinks = document.querySelectorAll('#bd-toc-nav a');
+    for (var i = 0; i < navLinks.length; i++) {
+        var navLink = navLinks[i];
+        navLink.parentElement.classList.remove('active');
+    }
+    var navLinks = document.querySelectorAll('#bd-toc-nav a.active');
+    for (var i = 0; i < navLinks.length; i++) {
+        var navLink = navLinks[i];
+        navLink.parentElement.classList.add('active');
+    }
+    });
 
-   <div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
+    /**
+     * Use left and right arrow keys to navigate forward and backwards.
+    */
+    const LEFT_ARROW_KEYCODE = 37
+    const RIGHT_ARROW_KEYCODE = 39
 
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
+    const getPrevUrl = () => document.getElementById('prev-link').href
+    const getNextUrl = () => document.getElementById('next-link').href
+    const initPageNav = (event) => {
+        const keycode = event.which
+
+        if (keycode === LEFT_ARROW_KEYCODE) {
+            window.location.href = getPrevUrl();
+        } else if (keycode === RIGHT_ARROW_KEYCODE) {
+            window.location.href = getNextUrl();
+        }
+    };
+
+    var keyboardListener = false;
+    $( document ).ready(() => {
+        if (keyboardListener === false) {
+            document.addEventListener('keydown', initPageNav)
+            keyboardListener = true;
+        }
+    });
+</script>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Project Jupyter.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
     </div>
-    <div class="footer">
-      &copy;2017, Project Jupyter.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
-    </div>
-
-    
-
-    
   </body>
 </html>

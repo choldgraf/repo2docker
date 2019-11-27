@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Contributing to repo2docker development &#8212; repo2docker 0.10.0 documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link href="../_static/css/custom.css" rel="stylesheet">
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The repo2docker roadmap" href="roadmap.html" />
+    <link rel="prev" title="Contributing" href="index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.png" class="logo" alt="logo">
+</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div id="navbar-menu" class="collapse navbar-collapse">
+  <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+    </li>
+    
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../getting-started/index.html">Getting Started</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../howto/index.html">How-to Guides</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../configuration/index.html">Configuring your repository</a>
+    </li>
+    
+    <li class="nav-item active">
+        <a class="nav-link" href="index.html">Contributing</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../changelog.html">Changelog</a>
+    </li>
+    
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="https://github.com/pandas-dev/pandas" target="_blank" rel="noopener">
+        <span><i class="fab fa-github-alt" style="color:#333;font-size:1rem;line-height:1.25"></i></span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://twitter.com/pandas_dev" target="_blank" rel="noopener">
+        <span><i class="fab fa-twitter" style="color:#55acee;font-size:1rem;line-height:1.25"></i></span>
+      </a>
+    </li>
+  </ul>
+</div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+              
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+      
+      
+        
+          
+              <li class="active">
+                  <a href="">Contributing to repo2docker development</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="roadmap.html">The repo2docker roadmap</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="../architecture.html">Architecture of repo2docker</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="../design.html">Design of repo2docker</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="tasks.html">Common tasks</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="buildpack.html">Adding a new buildpack to repo2docker</a>
+              </li>
+          
+        
+      
+      
+      
+      
+    </ul>
+
+</nav>
+
+
+              
+          </div>
+
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#types-of-contribution" class="nav-link">Types of contribution</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#process-for-making-a-contribution" class="nav-link">Process for making a contribution</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#guidelines-to-getting-a-pull-request-merged" class="nav-link">Guidelines to getting a Pull Request merged</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#setting-up-for-local-development" class="nav-link">Setting up for Local Development</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#clone-the-repository" class="nav-link">Clone the repository</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#set-up-a-local-virtual-environment" class="nav-link">Set up a local virtual environment</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#code-formatting" class="nav-link">Code formatting</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#verify-that-docker-is-installed-and-running" class="nav-link">Verify that docker is installed and running</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#building-the-documentation-locally" class="nav-link">Building the documentation locally</a>
+        </li>
+    
+    </ul>
+</nav>
+              
+            </div>
+
+          <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+              <div>
+                
+  <div class="section" id="contributing-to-repo2docker-development">
+<h1>Contributing to repo2docker development<a class="headerlink" href="#contributing-to-repo2docker-development" title="Permalink to this headline">¶</a></h1>
+<p>Thank you for thinking about contributing to repo2docker!
+This is an open source project that is developed and maintained entirely by volunteers.
+<em>Your contribution</em> is integral to the future of the project.
+THANK YOU!</p>
+<div class="section" id="types-of-contribution">
+<h2>Types of contribution<a class="headerlink" href="#types-of-contribution" title="Permalink to this headline">¶</a></h2>
+<p>There are many ways to contribute to repo2docker:</p>
+<ul class="simple">
+<li><p><strong>Update the documentation.</strong>
+If you’re reading a page or docstring and it doesn’t make sense (or doesn’t exist!), please let us know by opening a bug report.
+It’s even more amazing if you can give us a suggested change.</p></li>
+<li><p><strong>Fix bugs or add requested features.</strong>
+Have a look through the <a class="reference external" href="https://github.com/jupyter/repo2docker/issues">issue tracker</a> and see if there are any tagged as <a class="reference external" href="https://github.com/jupyter/repo2docker/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22">“help wanted”</a>.
+As the label suggests, we’d love your help!</p></li>
+<li><p><strong>Report a bug.</strong>
+If repo2docker isn’t doing what you thought it would do then open a <a class="reference external" href="https://github.com/jupyter/repo2docker/issues/new?template=bug_report">bug report</a>.
+That issue template will ask you a few questions described in more detail below.</p></li>
+<li><p><strong>Suggest a new feature.</strong>
+We know that there are lots of ways to extend repo2docker!
+If you’re interested in adding a feature then please open a <a class="reference external" href="https://github.com/jupyter/repo2docker/issues/new?template=feature_request">feature request</a>.
+That issue template will ask you a few questions described in detail below.</p></li>
+<li><p><strong>Review someone’s Pull Request.</strong>
+Whenever somebody proposes changes to the repo2docker codebase, the community reviews
+the changes, and provides feedback, edits, and suggestions. Check out the
+<a class="reference external" href="https://github.com/jupyter/repo2docker/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc">open pull requests</a>
+and provide feedback that helps improve the PR and get it merged. Please keep your
+feedback positive and constructive!</p></li>
+<li><p><strong>Tell people about repo2docker.</strong>
+As we said above, repo2docker is built by and for its community.
+If you know anyone who would like to use repo2docker, please tell them about the project!
+You could give a talk about it, or run a demonstration.
+The sky is the limit :rocket::star2:.</p></li>
+</ul>
+<p>If you’re not sure where to get started, then please come and say hello in our <a class="reference external" href="https://gitter.im/jupyterhub/binder">Gitter channel</a>, or open an discussion thread at the <a class="reference external" href="https://discourse.jupyter.org/">Jupyter discourse forum</a>.</p>
+</div>
+<div class="section" id="process-for-making-a-contribution">
+<h2>Process for making a contribution<a class="headerlink" href="#process-for-making-a-contribution" title="Permalink to this headline">¶</a></h2>
+<p>This outlines the process for getting changes to the repo2docker project merged.</p>
+<ol>
+<li><p>Identify the correct issue template: <a class="reference external" href="https://github.com/jupyter/repo2docker/issues/new?template=bug_report">bug report</a> or <a class="reference external" href="https://github.com/jupyter/repo2docker/issues/new?template=feature_request">feature request</a>.</p>
+<p><strong>Bug reports</strong> (<a class="reference external" href="https://github.com/jupyter/repo2docker/issues?q=is%3Aissue+is%3Aopen+label%3Abug">examples</a>, <a class="reference external" href="https://github.com/jupyter/repo2docker/issues/new?template=bug_report">new issue</a>) will ask you for a description of the problem, the expected behaviour, the actual behaviour, how to reproduce the problem, and your personal set up.
+Bugs can include problems with the documentation, or code not running as expected.</p>
+<p>It is really important that you make it easy for the maintainers to reproduce the problem you’re having.
+This guide on creating a <a class="reference external" href="https://stackoverflow.com/help/mcve">minimal, complete and verifiable example</a> is a great place to start.</p>
+<p><strong>Feature requests</strong> (<a class="reference external" href="https://github.com/jupyter/repo2docker/labels/needs%3A%20discussion">examples</a>, <a class="reference external" href="https://github.com/jupyter/repo2docker/issues/new?template=feature_request">new issue</a>) will ask you for the proposed change, any alternatives that you have considered, a description of who would use this feature, and a best-guess of how much work it will take and what skills are required to accomplish.</p>
+<p>Very easy feature requests might be updates to the documentation to clarify steps for new users.
+Harder feature requests may be to add new functionality to the project and will need more in depth discussion about who can complete and maintain the work.</p>
+<p>Feature requests are a great opportunity for you to advocate for the use case you’re suggesting.
+They help others understand how much effort it would be to integrate the work,and - if you’re successful at convincing them that this effort is worth it - make it more likely that they to choose to work on it with you.</p>
+</li>
+<li><p>Open an issue.
+Getting consensus with the community is a great way to save time later.</p></li>
+<li><p>Make edits in <a class="reference external" href="https://help.github.com/en/articles/fork-a-repo">your fork</a> of the <a class="reference external" href="https://github.com/jupyter/repo2docker">repo2docker repository</a>.</p></li>
+<li><p>Make a <a class="reference external" href="https://help.github.com/en/articles/about-pull-requests">pull request</a>.
+Read the <a class="reference external" href="#guidelines-to-getting-a-pull-request-merged">next section</a> for guidelines for both reviewers and contributors on merging a PR.</p></li>
+<li><p>Edit <a class="reference internal" href="../changelog.html"><span class="doc">the changelog</span></a> by appending your feature / bug fix to the development version.</p></li>
+<li><p>Wait for a community member to merge your changes.
+Remember that <strong>someone else must merge your pull request</strong>.
+That goes for new contributors and long term maintainers alike.</p></li>
+<li><p>(optional) Deploy a new version of repo2docker to mybinder.org by <a class="reference external" href="http://mybinder-sre.readthedocs.io/en/latest/deployment/how.html">following these steps</a></p></li>
+</ol>
+</div>
+<div class="section" id="guidelines-to-getting-a-pull-request-merged">
+<h2>Guidelines to getting a Pull Request merged<a class="headerlink" href="#guidelines-to-getting-a-pull-request-merged" title="Permalink to this headline">¶</a></h2>
+<p>These are not hard rules to be enforced by 🚓 but they are suggestions written by the repo2docker maintainers to help complete your contribution as smoothly as possible for both you and for them.</p>
+<ul class="simple">
+<li><p><strong>Create a PR as early as possible</strong>, marking it with <code class="docutils literal notranslate"><span class="pre">[WIP]</span></code> while you work on it.
+This avoids duplicated work, lets you get high level feedback on functionality or API changes, and/or helps find collaborators to work with you.</p></li>
+<li><p><strong>Keep your PR focused.</strong>
+The best PRs solve one problem.
+If you end up changing multiple things, please open separate PRs for the different conceptual changes.</p></li>
+<li><p><strong>Add tests to your code.</strong>
+PRs will not be merged if Travis is failing.</p></li>
+<li><p><strong>Apply <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP8</a></strong> as much as possible, but not too much.
+If in doubt, ask.</p></li>
+<li><p><strong>Use merge commits</strong> instead of merge-by-squashing/-rebasing.
+This makes it easier to find all changes since the last deployment <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span> <span class="pre">--merges</span> <span class="pre">--pretty=format:&quot;%h</span> <span class="pre">%&lt;(10,trunc)%an</span> <span class="pre">%&lt;(15)%ar</span> <span class="pre">%s&quot;</span> <span class="pre">&lt;deployed-revision&gt;..</span></code> and your PR easier to review.</p></li>
+<li><p><strong>Make it clear when your PR is ready for review.</strong>
+Prefix the title of your pull request (PR) with <code class="docutils literal notranslate"><span class="pre">[MRG]</span></code> if the contribution is complete and should be subjected to a detailed review.</p></li>
+<li><p><strong>Enter your changes into the <a class="reference internal" href="../changelog.html"><span class="doc">changelog</span></a></strong> in <code class="docutils literal notranslate"><span class="pre">docs/source/changelog.rst</span></code>.</p></li>
+<li><p><strong>Use commit messages to describe <em>why</em> you are proposing the changes you are proposing.</strong></p></li>
+<li><p><strong>Try to not rush changes</strong> (the definition of rush depends on how big your changes are).
+Remember that everyone in the repo2docker team is a volunteer and we can not (nor would we want to) control their time or interests.
+Wait patiently for a reviewer to merge the PR.
+(Remember that <strong>someone else</strong> must merge your PR, even if you have the admin rights to do so.)</p></li>
+</ul>
+</div>
+<div class="section" id="setting-up-for-local-development">
+<h2>Setting up for Local Development<a class="headerlink" href="#setting-up-for-local-development" title="Permalink to this headline">¶</a></h2>
+<p>To develop &amp; test repo2docker locally, you need:</p>
+<ol class="simple">
+<li><p>Familiarity with using a command line terminal</p></li>
+<li><p>A computer running macOS / Linux</p></li>
+<li><p>Some knowledge of git</p></li>
+<li><p>At least python 3.6</p></li>
+<li><p>Your favorite text editor</p></li>
+<li><p>A recent version of <a class="reference external" href="https://www.docker.com/community-edition">Docker Community Edition</a></p></li>
+</ol>
+<div class="section" id="clone-the-repository">
+<h3>Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permalink to this headline">¶</a></h3>
+<p>First, you need to get a copy of the repo2docker git repository on your local
+disk. Fork the repository on GitHub, then clone it to your computer:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/&lt;your-username&gt;/repo2docker
+</pre></div>
+</div>
+<p>This will clone repo2docker into a directory called <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code>. You can
+make that your current directory with <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">repo2docker</span></code>.</p>
+</div>
+<div class="section" id="set-up-a-local-virtual-environment">
+<h3>Set up a local virtual environment<a class="headerlink" href="#set-up-a-local-virtual-environment" title="Permalink to this headline">¶</a></h3>
+<p>After cloning the repository, you should set up an
+isolated environment to install libraries required for running / developing
+repo2docker.</p>
+<p>There are many ways to do this but here we present you with two approaches: <code class="docutils literal notranslate"><span class="pre">virtual</span> <span class="pre">environment</span></code> or <code class="docutils literal notranslate"><span class="pre">pipenv</span></code>.</p>
+<ul class="simple">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">virtual</span> <span class="pre">environment</span></code></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python3 -m venv .
+<span class="nb">source</span> bin/activate
+pip3 install -e .
+pip3 install -r dev-requirements.txt
+pip3 install -r docs/doc-requirements.txt
+pip3 install black
+</pre></div>
+</div>
+<p>This should install all the libraries required for testing &amp; running repo2docker!</p>
+<ul class="simple">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">pipenv</span></code></p></li>
+</ul>
+<p>Note that you will need to install pipenv first using <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">pipenv</span></code>.
+Then from the root directory of this project you can use the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pipenv install --dev
+</pre></div>
+</div>
+<p>This should install both the dev and docs requirements at once!</p>
+</div>
+<div class="section" id="code-formatting">
+<h3>Code formatting<a class="headerlink" href="#code-formatting" title="Permalink to this headline">¶</a></h3>
+<p>We use <a class="reference external" href="https://black.readthedocs.io/en/stable/"><code class="docutils literal notranslate"><span class="pre">black</span></code></a> as code formatter to
+get a consistent layout for all the code in this project. This makes reading
+the code easier.</p>
+<p>To format your code run <code class="docutils literal notranslate"><span class="pre">black</span> <span class="pre">.</span></code> in the top-level directory of this repository.
+Many editors have plugins that will automatically apply black as you edit files.</p>
+<p>We also have a pre-commit hook setup that will check that code is formatted
+according to black’s style guide. You can activate it with <code class="docutils literal notranslate"><span class="pre">pre-commit</span> <span class="pre">install</span></code>.</p>
+<p>As part of our continuous integration tests we will check that code is
+formatted properly and the tests will fail if this is not the case.</p>
+</div>
+<div class="section" id="verify-that-docker-is-installed-and-running">
+<h3>Verify that docker is installed and running<a class="headerlink" href="#verify-that-docker-is-installed-and-running" title="Permalink to this headline">¶</a></h3>
+<p>If you do not already have <a class="reference external" href="https://www.docker.com/">Docker</a>, you should be able
+to download and install it for your operating system using the links from the
+<a class="reference external" href="https://www.docker.com/community-edition">official website</a>. After you have
+installed it, you can verify that it is working by running the following commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker version
+</pre></div>
+</div>
+<p>It should output something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Client</span><span class="p">:</span>
+ <span class="n">Version</span><span class="p">:</span>      <span class="mf">17.09</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">ce</span>
+ <span class="n">API</span> <span class="n">version</span><span class="p">:</span>  <span class="mf">1.32</span>
+ <span class="n">Go</span> <span class="n">version</span><span class="p">:</span>   <span class="n">go1</span><span class="o">.</span><span class="mf">8.3</span>
+ <span class="n">Git</span> <span class="n">commit</span><span class="p">:</span>   <span class="n">afdb6d4</span>
+ <span class="n">Built</span><span class="p">:</span>        <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">26</span> <span class="mi">22</span><span class="p">:</span><span class="mi">42</span><span class="p">:</span><span class="mi">45</span> <span class="mi">2017</span>
+ <span class="n">OS</span><span class="o">/</span><span class="n">Arch</span><span class="p">:</span>      <span class="n">linux</span><span class="o">/</span><span class="n">amd64</span>
+
+<span class="n">Server</span><span class="p">:</span>
+ <span class="n">Version</span><span class="p">:</span>      <span class="mf">17.09</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">ce</span>
+ <span class="n">API</span> <span class="n">version</span><span class="p">:</span>  <span class="mf">1.32</span> <span class="p">(</span><span class="n">minimum</span> <span class="n">version</span> <span class="mf">1.12</span><span class="p">)</span>
+ <span class="n">Go</span> <span class="n">version</span><span class="p">:</span>   <span class="n">go1</span><span class="o">.</span><span class="mf">8.3</span>
+ <span class="n">Git</span> <span class="n">commit</span><span class="p">:</span>   <span class="n">afdb6d4</span>
+ <span class="n">Built</span><span class="p">:</span>        <span class="n">Tue</span> <span class="n">Sep</span> <span class="mi">26</span> <span class="mi">22</span><span class="p">:</span><span class="mi">41</span><span class="p">:</span><span class="mi">24</span> <span class="mi">2017</span>
+ <span class="n">OS</span><span class="o">/</span><span class="n">Arch</span><span class="p">:</span>      <span class="n">linux</span><span class="o">/</span><span class="n">amd64</span>
+ <span class="n">Experimental</span><span class="p">:</span> <span class="n">false</span>
+</pre></div>
+</div>
+<p>Then you are good to go!</p>
+</div>
+</div>
+<div class="section" id="building-the-documentation-locally">
+<h2>Building the documentation locally<a class="headerlink" href="#building-the-documentation-locally" title="Permalink to this headline">¶</a></h2>
+<p>If you only changed the documentation, you can also build the documentation locally using <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> .</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install -r docs/doc-requirements.txt
+
+<span class="nb">cd</span> docs/
+make html
+</pre></div>
+</div>
+<p>Then open the file <code class="docutils literal notranslate"><span class="pre">docs/build/html/index.html</span></code> in your browser.</p>
+</div>
+</div>
+
+
+              </div>
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Contributing</a>
+    <a class='right-next' id="next-link" href="roadmap.html" title="next page">The repo2docker roadmap</a>
+
+              </div>
+          </main>
+
+      </div>
+    </div><script>
+    // TOC sidebar - add "active" class to parent list
+    //
+    // Bootstrap's scrollspy adds the active class to the <a> link,
+    // but for the automatic collapsing we need this on the parent list item.
+    //
+    // The event is triggered on "window" (and not the nav item as documented),
+    // see https://github.com/twbs/bootstrap/issues/20086
+    $(window).on("activate.bs.scrollspy", function(){
+    var navLinks = document.querySelectorAll('#bd-toc-nav a');
+    for (var i = 0; i < navLinks.length; i++) {
+        var navLink = navLinks[i];
+        navLink.parentElement.classList.remove('active');
+    }
+    var navLinks = document.querySelectorAll('#bd-toc-nav a.active');
+    for (var i = 0; i < navLinks.length; i++) {
+        var navLink = navLinks[i];
+        navLink.parentElement.classList.add('active');
+    }
+    });
+
+    /**
+     * Use left and right arrow keys to navigate forward and backwards.
+    */
+    const LEFT_ARROW_KEYCODE = 37
+    const RIGHT_ARROW_KEYCODE = 39
+
+    const getPrevUrl = () => document.getElementById('prev-link').href
+    const getNextUrl = () => document.getElementById('next-link').href
+    const initPageNav = (event) => {
+        const keycode = event.which
+
+        if (keycode === LEFT_ARROW_KEYCODE) {
+            window.location.href = getPrevUrl();
+        } else if (keycode === RIGHT_ARROW_KEYCODE) {
+            window.location.href = getNextUrl();
+        }
+    };
+
+    var keyboardListener = false;
+    $( document ).ready(() => {
+        if (keyboardListener === false) {
+            document.addEventListener('keydown', initPageNav)
+            keyboardListener = true;
+        }
+    });
+</script>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Project Jupyter.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>

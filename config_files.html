@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Configuration Files &#8212; repo2docker 0.10.0 documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="_static/sphinx-bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link href="_static/css/custom.css" rel="stylesheet">
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The Reproducible Execution Environment Specification" href="specification.html" />
+    <link rel="prev" title="Configuring your repository" href="configuration/index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+
+<a class="navbar-brand" href="index.html">
+  <img src="_static/logo.png" class="logo" alt="logo">
+</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div id="navbar-menu" class="collapse navbar-collapse">
+  <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+    </li>
+    
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="getting-started/index.html">Getting Started</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="howto/index.html">How-to Guides</a>
+    </li>
+    
+    <li class="nav-item active">
+        <a class="nav-link" href="configuration/index.html">Configuring your repository</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="contributing/index.html">Contributing</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="changelog.html">Changelog</a>
+    </li>
+    
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="https://github.com/pandas-dev/pandas" target="_blank" rel="noopener">
+        <span><i class="fab fa-github-alt" style="color:#333;font-size:1rem;line-height:1.25"></i></span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://twitter.com/pandas_dev" target="_blank" rel="noopener">
+        <span><i class="fab fa-twitter" style="color:#55acee;font-size:1rem;line-height:1.25"></i></span>
+      </a>
+    </li>
+  </ul>
+</div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+              
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+        
+          
+              <li class="active">
+                  <a href="">Configuration Files</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="specification.html">The Reproducible Execution Environment Specification</a>
+              </li>
+          
+        
+      
+      
+      
+      
+      
+      
+    </ul>
+
+</nav>
+
+
+              
+          </div>
+
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#environment-yml-install-a-python-environment" class="nav-link">environment.yml - Install a Python environment</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#pipfile-and-or-pipfile-lock-install-a-python-environment" class="nav-link">Pipfile and/or Pipfile.lock - Install a Python environment</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#requirements-txt-install-a-python-environment" class="nav-link">requirements.txt - Install a Python environment</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#setup-py-install-python-packages" class="nav-link">setup.py - Install Python packages</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#project-toml-install-a-julia-environment" class="nav-link">Project.toml - Install a Julia environment</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#require-install-a-julia-environment-legacy" class="nav-link">REQUIRE - Install a Julia environment (legacy)</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#install-r-install-an-r-rstudio-environment" class="nav-link">install.R - Install an R/RStudio environment</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#apt-txt-install-packages-with-apt-get" class="nav-link">apt.txt - Install packages with apt-get</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#description-install-an-r-package" class="nav-link">DESCRIPTION - Install an R package</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#manifest-xml-install-stencila" class="nav-link">manifest.xml - Install Stencila</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#postbuild-run-code-after-installing-the-environment" class="nav-link">postBuild - Run code after installing the environment</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#start-run-code-before-the-user-sessions-starts" class="nav-link">start - Run code before the user sessions starts</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#runtime-txt-specifying-runtimes" class="nav-link">runtime.txt - Specifying runtimes</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#default-nix-the-nix-package-manager" class="nav-link">default.nix - the nix package manager</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#dockerfile-advanced-environments" class="nav-link">Dockerfile - Advanced environments</a>
+        </li>
+    
+    </ul>
+</nav>
+              
+            </div>
+
+          <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+              <div>
+                
+  <div class="section" id="configuration-files">
+<span id="config-files"></span><h1>Configuration Files<a class="headerlink" href="#configuration-files" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> looks for configuration files in the repository being built
+to determine how to build it. In general, <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> uses the same
+configuration files as other software installation tools,
+rather than creating new custom configuration files.</p>
+<p>A number of <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> configuration files can be combined to compose more
+complex setups.</p>
+<p>The <a class="reference external" href="https://github.com/binder-examples">binder examples</a> organization on
+GitHub contains a list of sample repositories for common configurations
+that <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> can build with various configuration files such as
+Python and R installation in a repository.</p>
+<p>Below is a list of supported configuration files (roughly in the order of build priority):</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#environment-yml-install-a-python-environment" id="id2"><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> - Install a Python environment</a></p></li>
+<li><p><a class="reference internal" href="#pipfile-and-or-pipfile-lock-install-a-python-environment" id="id3"><code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> and/or <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code> - Install a Python environment</a></p></li>
+<li><p><a class="reference internal" href="#requirements-txt-install-a-python-environment" id="id4"><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> - Install a Python environment</a></p></li>
+<li><p><a class="reference internal" href="#setup-py-install-python-packages" id="id5"><code class="docutils literal notranslate"><span class="pre">setup.py</span></code> - Install Python packages</a></p></li>
+<li><p><a class="reference internal" href="#project-toml-install-a-julia-environment" id="id6"><code class="docutils literal notranslate"><span class="pre">Project.toml</span></code> - Install a Julia environment</a></p></li>
+<li><p><a class="reference internal" href="#require-install-a-julia-environment-legacy" id="id7"><code class="docutils literal notranslate"><span class="pre">REQUIRE</span></code> - Install a Julia environment (legacy)</a></p></li>
+<li><p><a class="reference internal" href="#install-r-install-an-r-rstudio-environment" id="id8"><code class="docutils literal notranslate"><span class="pre">install.R</span></code> - Install an R/RStudio environment</a></p></li>
+<li><p><a class="reference internal" href="#apt-txt-install-packages-with-apt-get" id="id9"><code class="docutils literal notranslate"><span class="pre">apt.txt</span></code> - Install packages with apt-get</a></p></li>
+<li><p><a class="reference internal" href="#description-install-an-r-package" id="id10"><code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span></code> - Install an R package</a></p></li>
+<li><p><a class="reference internal" href="#manifest-xml-install-stencila" id="id11"><code class="docutils literal notranslate"><span class="pre">manifest.xml</span></code> - Install Stencila</a></p></li>
+<li><p><a class="reference internal" href="#postbuild-run-code-after-installing-the-environment" id="id12"><code class="docutils literal notranslate"><span class="pre">postBuild</span></code> - Run code after installing the environment</a></p></li>
+<li><p><a class="reference internal" href="#start-run-code-before-the-user-sessions-starts" id="id13"><code class="docutils literal notranslate"><span class="pre">start</span></code> - Run code before the user sessions starts</a></p></li>
+<li><p><a class="reference internal" href="#runtime-txt-specifying-runtimes" id="id14"><code class="docutils literal notranslate"><span class="pre">runtime.txt</span></code> - Specifying runtimes</a></p></li>
+<li><p><a class="reference internal" href="#default-nix-the-nix-package-manager" id="id15"><code class="docutils literal notranslate"><span class="pre">default.nix</span></code> - the nix package manager</a></p></li>
+<li><p><a class="reference internal" href="#dockerfile-advanced-environments" id="id16"><code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> - Advanced environments</a></p></li>
+</ul>
+</div>
+<div class="section" id="environment-yml-install-a-python-environment">
+<span id="environment-yml"></span><h2><a class="toc-backref" href="#id2"><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> - Install a Python environment</a><a class="headerlink" href="#environment-yml-install-a-python-environment" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> is the standard configuration file used by <a class="reference external" href="https://conda.io">conda</a>
+that lets you install any kind of package,
+including Python, R, and C/C++ packages.
+<code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> does not use your <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> to create and activate a new conda environment.
+Rather, it updates a base conda environment <a class="reference external" href="https://github.com/jupyter/repo2docker/blob/master/repo2docker/buildpacks/conda/environment.yml">defined here</a> with the packages listed in your <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>.
+This means that the environment will always have the same default name, not the name
+specified in your <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>.</p>
+<div class="alert alert-info">
+<p class="admonition-title">Note</p>
+<p>You can install files from pip in your <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> as well.
+For example, see the <a class="reference external" href="https://github.com/binder-examples/python-conda_pip/blob/master/environment.yml">binder-examples environment.yml</a>
+file.</p>
+</div>
+<p>You can also specify which Python version to install in your built environment
+with <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>. By default, <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> installs
+<strong>Python 3.7</strong> with your <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> unless you include the version of
+Python in this file.  <code class="docutils literal notranslate"><span class="pre">conda</span></code> supports all versions of Python,
+though <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> support is best with Python 3.7, 3.6, 3.5 and 2.7.</p>
+<div class="alert alert-warning">
+<p class="admonition-title">Warning</p>
+<p>If you include a Python version in a <code class="docutils literal notranslate"><span class="pre">runtime.txt</span></code> file in addition to your
+<code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>, your <code class="docutils literal notranslate"><span class="pre">runtime.txt</span></code> will be ignored.</p>
+</div>
+</div>
+<div class="section" id="pipfile-and-or-pipfile-lock-install-a-python-environment">
+<span id="pipfile"></span><h2><a class="toc-backref" href="#id3"><code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> and/or <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code> - Install a Python environment</a><a class="headerlink" href="#pipfile-and-or-pipfile-lock-install-a-python-environment" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/pypa/pipenv/">pipenv</a> allows you to manage a virtual
+environment Python dependencies. When using <code class="docutils literal notranslate"><span class="pre">pipenv</span></code>, you end up with
+<code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> and <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code> files. The lock file contains explicit details
+about the packages that has been installed that met the criteria within the
+<code class="docutils literal notranslate"><span class="pre">Pipfile</span></code>.</p>
+<p>If both <code class="docutils literal notranslate"><span class="pre">Pipfile</span></code> and <code class="docutils literal notranslate"><span class="pre">Pipfile.lock</span></code> are found by repo2docker, the former
+will be ignored in favor of the lock file. Also note that these files
+distinguish packages and development packages and that repo2docker will install
+both kinds.</p>
+</div>
+<div class="section" id="requirements-txt-install-a-python-environment">
+<span id="requirements-txt"></span><h2><a class="toc-backref" href="#id4"><code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> - Install a Python environment</a><a class="headerlink" href="#requirements-txt-install-a-python-environment" title="Permalink to this headline">¶</a></h2>
+<p>This specifies a list of Python packages that should be installed in your
+environment. Our
+<a class="reference external" href="https://github.com/binder-examples/requirements/blob/master/requirements.txt">requirements.txt example</a>
+on GitHub shows a typical requirements file.</p>
+</div>
+<div class="section" id="setup-py-install-python-packages">
+<span id="setup-py"></span><h2><a class="toc-backref" href="#id5"><code class="docutils literal notranslate"><span class="pre">setup.py</span></code> - Install Python packages</a><a class="headerlink" href="#setup-py-install-python-packages" title="Permalink to this headline">¶</a></h2>
+<p>To install your repository like a Python package, you may include a
+<code class="docutils literal notranslate"><span class="pre">setup.py</span></code> file. repo2docker installs <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> files by running
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code>.</p>
+</div>
+<div class="section" id="project-toml-install-a-julia-environment">
+<span id="project-toml"></span><h2><a class="toc-backref" href="#id6"><code class="docutils literal notranslate"><span class="pre">Project.toml</span></code> - Install a Julia environment</a><a class="headerlink" href="#project-toml-install-a-julia-environment" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">Project.toml</span></code> (or <code class="docutils literal notranslate"><span class="pre">JuliaProject.toml</span></code>) file can specify both the
+version of Julia to be used and a list of Julia packages to be installed.
+If a <code class="docutils literal notranslate"><span class="pre">Manifest.toml</span></code> is present, it will determine the exact versions
+of the Julia packages that are installed.</p>
+</div>
+<div class="section" id="require-install-a-julia-environment-legacy">
+<span id="require"></span><h2><a class="toc-backref" href="#id7"><code class="docutils literal notranslate"><span class="pre">REQUIRE</span></code> - Install a Julia environment (legacy)</a><a class="headerlink" href="#require-install-a-julia-environment-legacy" title="Permalink to this headline">¶</a></h2>
+<p>A <code class="docutils literal notranslate"><span class="pre">REQUIRE</span></code> file can specify both the version of Julia to be used and
+which Julia packages should be used. The use of <code class="docutils literal notranslate"><span class="pre">REQUIRE</span></code> is only
+recommended for pre 1.0 Julia versions. The recommended way of installing
+a Julia environment that uses Julia 1.0 or newer is to use a <code class="docutils literal notranslate"><span class="pre">Project.toml</span></code>
+file. If both a <code class="docutils literal notranslate"><span class="pre">REQUIRE</span></code> and a <code class="docutils literal notranslate"><span class="pre">Project.toml</span></code> file are detected,
+the <code class="docutils literal notranslate"><span class="pre">REQUIRE</span></code> file is ignored. To see an example of a Julia repository
+with <code class="docutils literal notranslate"><span class="pre">REQUIRE</span></code> and <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>, visit
+<a class="reference external" href="https://github.com/binder-examples/julia-python">binder-examples/julia-python</a>.</p>
+</div>
+<div class="section" id="install-r-install-an-r-rstudio-environment">
+<span id="install-r"></span><h2><a class="toc-backref" href="#id8"><code class="docutils literal notranslate"><span class="pre">install.R</span></code> - Install an R/RStudio environment</a><a class="headerlink" href="#install-r-install-an-r-rstudio-environment" title="Permalink to this headline">¶</a></h2>
+<p>This is used to install R libraries pinned to a specific snapshot on
+<a class="reference external" href="https://mran.microsoft.com/documents/rro/reproducibility">MRAN</a>.
+To set the date of the snapshot add a <a class="reference internal" href="#runtime-txt">runtime.txt</a>.
+For an example <code class="docutils literal notranslate"><span class="pre">install.R</span></code> file, visit our <a class="reference external" href="https://github.com/binder-examples/r/blob/master/install.R">example install.R file</a>.</p>
+</div>
+<div class="section" id="apt-txt-install-packages-with-apt-get">
+<span id="apt-txt"></span><h2><a class="toc-backref" href="#id9"><code class="docutils literal notranslate"><span class="pre">apt.txt</span></code> - Install packages with apt-get</a><a class="headerlink" href="#apt-txt-install-packages-with-apt-get" title="Permalink to this headline">¶</a></h2>
+<p>A list of Debian packages that should be installed. The base image used is usually the latest released
+version of Ubuntu.</p>
+<p>We use <code class="docutils literal notranslate"><span class="pre">apt.txt</span></code>, for example, to install LaTeX in our
+<a class="reference external" href="https://github.com/binder-examples/latex/blob/master/apt.txt">example apt.txt for LaTeX</a>.</p>
+</div>
+<div class="section" id="description-install-an-r-package">
+<span id="description"></span><h2><a class="toc-backref" href="#id10"><code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span></code> - Install an R package</a><a class="headerlink" href="#description-install-an-r-package" title="Permalink to this headline">¶</a></h2>
+<p>To install your repository like an R package, you may include a
+<code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span></code> file. repo2docker installs the package and dependencies
+from the <code class="docutils literal notranslate"><span class="pre">DESCRIPTION</span></code> by running <code class="docutils literal notranslate"><span class="pre">devtools:install_git(&quot;.&quot;)</span></code>.</p>
+<p>You also need to have a <code class="docutils literal notranslate"><span class="pre">runtime.txt</span></code> file that is formatted as
+<code class="docutils literal notranslate"><span class="pre">r-&lt;YYYY&gt;-&lt;MM&gt;-&lt;DD&gt;</span></code>, where YYYY-MM-DD is a snapshot of MRAN that will be
+used for your R installation.</p>
+</div>
+<div class="section" id="manifest-xml-install-stencila">
+<span id="manifest-xml"></span><h2><a class="toc-backref" href="#id11"><code class="docutils literal notranslate"><span class="pre">manifest.xml</span></code> - Install Stencila</a><a class="headerlink" href="#manifest-xml-install-stencila" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://stenci.la/">Stencila</a> is an open source office suite for reproducible research.
+It is powered by the open file format <a class="reference external" href="https://github.com/substance/dar">Dar</a>.</p>
+<p>If your repository contains a Stencila document, repo2docker detects it based on the file <code class="docutils literal notranslate"><span class="pre">manifest.xml</span></code>.
+The required <a class="reference external" href="https://stenci.la/learn/intro.html">execution contexts</a> are extracted from a Dar article (i.e.
+files named <code class="docutils literal notranslate"><span class="pre">*.jats.xml</span></code>).</p>
+<p>You may also have a <code class="docutils literal notranslate"><span class="pre">runtime.txt</span></code> and/or an <code class="docutils literal notranslate"><span class="pre">install.R</span></code> to manually configure your R installation.</p>
+<p>To see example repositories, visit our
+<a class="reference external" href="https://github.com/binder-examples/stencila-r/">Stencila with R</a> and
+<a class="reference external" href="https://github.com/binder-examples/stencila-py">Stencila with Python</a> examples.</p>
+</div>
+<div class="section" id="postbuild-run-code-after-installing-the-environment">
+<span id="postbuild"></span><h2><a class="toc-backref" href="#id12"><code class="docutils literal notranslate"><span class="pre">postBuild</span></code> - Run code after installing the environment</a><a class="headerlink" href="#postbuild-run-code-after-installing-the-environment" title="Permalink to this headline">¶</a></h2>
+<p>A script that can contain arbitrary commands to be run after the whole repository has been built. If you
+want this to be a shell script, make sure the first line is <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code>.</p>
+<p>An example use-case of <code class="docutils literal notranslate"><span class="pre">postBuild</span></code> file is JupyterLab’s demo on mybinder.org.
+It uses a <code class="docutils literal notranslate"><span class="pre">postBuild</span></code> file in a folder called <code class="docutils literal notranslate"><span class="pre">binder</span></code> to <a class="reference external" href="https://github.com/jupyterlab/jupyterlab-demo/blob/master/binder/postBuild">prepare
+their demo for binder</a>.</p>
+</div>
+<div class="section" id="start-run-code-before-the-user-sessions-starts">
+<span id="start"></span><h2><a class="toc-backref" href="#id13"><code class="docutils literal notranslate"><span class="pre">start</span></code> - Run code before the user sessions starts</a><a class="headerlink" href="#start-run-code-before-the-user-sessions-starts" title="Permalink to this headline">¶</a></h2>
+<p>A script that can contain simple commands to be run at runtime (as an
+<a class="reference external" href="https://docs.docker.com/engine/reference/builder/#entrypoint">ENTRYPOINT</a>
+to the docker container). If you want this to be a shell script, make sure the
+first line is <code class="docutils literal notranslate"><span class="pre">#!/bin/bash</span></code>. The last line must be <code class="docutils literal notranslate"><span class="pre">exec</span> <span class="pre">&quot;$&#64;&quot;</span></code>
+or equivalent.</p>
+<p>Use this to set environment variables that software installed in your container
+expects to be set. This script is executed each time your binder is started and
+should at most take a few seconds to run.</p>
+<p>If you only need to run things once during the build phase use <a class="reference internal" href="#postbuild"><span class="std std-ref">postBuild - Run code after installing the environment</span></a>.</p>
+</div>
+<div class="section" id="runtime-txt-specifying-runtimes">
+<span id="runtime-txt"></span><h2><a class="toc-backref" href="#id14"><code class="docutils literal notranslate"><span class="pre">runtime.txt</span></code> - Specifying runtimes</a><a class="headerlink" href="#runtime-txt-specifying-runtimes" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes you want to specify the version of the runtime
+(e.g. the version of Python or R),
+but the environment specification format will not let you specify this information
+(e.g. requirements.txt or install.R).
+For these cases, we have a special file, <code class="docutils literal notranslate"><span class="pre">runtime.txt</span></code>.</p>
+<div class="alert alert-info">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">runtime.txt</span></code> is only supported when used with environment specifications
+that do not already support specifying the runtime
+(when using <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> for conda or <code class="docutils literal notranslate"><span class="pre">Project.toml</span></code> for Julia,
+<code class="docutils literal notranslate"><span class="pre">runtime.txt</span></code> will be ignored).</p>
+</div>
+<p>To use python-2.7: add <code class="docutils literal notranslate"><span class="pre">python-2.7</span></code> in runtime.txt file.
+The repository will run in an env with
+Python 2 installed. To see a full example repository, visit our
+<a class="reference external" href="https://github.com/binder-examples/python2_runtime/blob/master/runtime.txt">Python2 example</a>.</p>
+<p>repo2docker uses R libraries pinned to a specific snapshot on
+<a class="reference external" href="https://mran.microsoft.com/documents/rro/reproducibility">MRAN</a>.
+You need to have a <code class="docutils literal notranslate"><span class="pre">runtime.txt</span></code> file that is formatted as
+<code class="docutils literal notranslate"><span class="pre">r-&lt;RVERSION&gt;-&lt;YYYY&gt;-&lt;MM&gt;-&lt;DD&gt;</span></code>, where YYYY-MM-DD is a snapshot at MRAN that will be
+used for installing libraries. You can set RVERSION to 3.4, 3.5 or 3.6 to select
+the version of R you want to use. If you do not specify a R version the latest
+released version will be used (currently R 3.6). You can also specify the exact
+patch release you want to use for the 3.5 and 3.6 series.</p>
+<p>To see an example R repository, visit our <a class="reference external" href="https://github.com/binder-examples/r/blob/master/runtime.txt">R
+example in binder-examples</a>.</p>
+</div>
+<div class="section" id="default-nix-the-nix-package-manager">
+<span id="default-nix"></span><h2><a class="toc-backref" href="#id15"><code class="docutils literal notranslate"><span class="pre">default.nix</span></code> - the nix package manager</a><a class="headerlink" href="#default-nix-the-nix-package-manager" title="Permalink to this headline">¶</a></h2>
+<p>Specify packages to be installed by the <a class="reference external" href="https://github.com/NixOS/nixpkgs">nix package manager</a>.
+When you use this config file all other configuration files (like <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>)
+that specify packages are ignored. When using <code class="docutils literal notranslate"><span class="pre">nix</span></code> you have to specify all
+packages and dependencies explicitly, including the Jupyter notebook package that
+repo2docker expects to be installed. If you do not install Jupyter explicitly
+repo2docker will no be able to start your container.</p>
+<p><a class="reference external" href="https://nixos.org/nix/manual/#sec-nix-shell">nix-shell</a> is used to evaluate
+a <code class="docutils literal notranslate"><span class="pre">nix</span></code> expression written in a <code class="docutils literal notranslate"><span class="pre">default.nix</span></code> file. Make sure to
+<a class="reference external" href="https://discourse.nixos.org/t/nixops-pinning-nixpkgs/734">pin your nixpkgs</a>
+to produce a reproducible environment.</p>
+<p>To see an example repository visit
+<a class="reference external" href="https://github.com/binder-examples/nix">nix binder example</a>.</p>
+</div>
+<div class="section" id="dockerfile-advanced-environments">
+<h2><a class="toc-backref" href="#id16"><code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> - Advanced environments</a><a class="headerlink" href="#dockerfile-advanced-environments" title="Permalink to this headline">¶</a></h2>
+<p>In the majority of cases, providing your own Dockerfile is not necessary as the base
+images provide core functionality, compact image sizes, and efficient builds. We recommend
+trying the other configuration files before deciding to use your own Dockerfile.</p>
+<p>With Dockerfiles, a regular Docker build will be performed.</p>
+<div class="alert alert-info">
+<p class="admonition-title">Note</p>
+<p>If a Dockerfile is present, all other configuration files will be ignored.</p>
+</div>
+<p>See the <a class="reference external" href="https://mybinder.readthedocs.io/en/latest/tutorials/dockerfile.html">Advanced Binder Documentation</a> for
+best-practices with Dockerfiles.</p>
+</div>
+</div>
+
+
+              </div>
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="configuration/index.html" title="previous page">Configuring your repository</a>
+    <a class='right-next' id="next-link" href="specification.html" title="next page">The Reproducible Execution Environment Specification</a>
+
+              </div>
+          </main>
+
+      </div>
+    </div><script>
+    // TOC sidebar - add "active" class to parent list
+    //
+    // Bootstrap's scrollspy adds the active class to the <a> link,
+    // but for the automatic collapsing we need this on the parent list item.
+    //
+    // The event is triggered on "window" (and not the nav item as documented),
+    // see https://github.com/twbs/bootstrap/issues/20086
+    $(window).on("activate.bs.scrollspy", function(){
+    var navLinks = document.querySelectorAll('#bd-toc-nav a');
+    for (var i = 0; i < navLinks.length; i++) {
+        var navLink = navLinks[i];
+        navLink.parentElement.classList.remove('active');
+    }
+    var navLinks = document.querySelectorAll('#bd-toc-nav a.active');
+    for (var i = 0; i < navLinks.length; i++) {
+        var navLink = navLinks[i];
+        navLink.parentElement.classList.add('active');
+    }
+    });
+
+    /**
+     * Use left and right arrow keys to navigate forward and backwards.
+    */
+    const LEFT_ARROW_KEYCODE = 37
+    const RIGHT_ARROW_KEYCODE = 39
+
+    const getPrevUrl = () => document.getElementById('prev-link').href
+    const getNextUrl = () => document.getElementById('next-link').href
+    const initPageNav = (event) => {
+        const keycode = event.which
+
+        if (keycode === LEFT_ARROW_KEYCODE) {
+            window.location.href = getPrevUrl();
+        } else if (keycode === RIGHT_ARROW_KEYCODE) {
+            window.location.href = getNextUrl();
+        }
+    };
+
+    var keyboardListener = false;
+    $( document ).ready(() => {
+        if (keyboardListener === false) {
+            document.addEventListener('keydown', initPageNav)
+            keyboardListener = true;
+        }
+    });
+</script>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Project Jupyter.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>

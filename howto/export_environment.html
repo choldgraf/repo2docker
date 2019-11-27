@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>How to automatically create a environment.yml that works with repo2docker &#8212; repo2docker 0.10.0 documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link href="../_static/css/custom.css" rel="stylesheet">
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Share JupyterLab Workspaces with a repository" href="lab_workspaces.html" />
+    <link rel="prev" title="Choose languages for your environment" href="languages.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.png" class="logo" alt="logo">
+</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div id="navbar-menu" class="collapse navbar-collapse">
+  <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+    </li>
+    
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../getting-started/index.html">Getting Started</a>
+    </li>
+    
+    <li class="nav-item active">
+        <a class="nav-link" href="index.html">How-to Guides</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../configuration/index.html">Configuring your repository</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../contributing/index.html">Contributing</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../changelog.html">Changelog</a>
+    </li>
+    
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="https://github.com/pandas-dev/pandas" target="_blank" rel="noopener">
+        <span><i class="fab fa-github-alt" style="color:#333;font-size:1rem;line-height:1.25"></i></span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://twitter.com/pandas_dev" target="_blank" rel="noopener">
+        <span><i class="fab fa-twitter" style="color:#55acee;font-size:1rem;line-height:1.25"></i></span>
+      </a>
+    </li>
+  </ul>
+</div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+              
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+        
+          
+              <li class="">
+                  <a href="user_interface.html">Configure the user interface</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="languages.html">Choose languages for your environment</a>
+              </li>
+          
+        
+          
+              <li class="active">
+                  <a href="">How to automatically create a environment.yml that works with repo2docker</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="lab_workspaces.html">Share JupyterLab Workspaces with a repository</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="jupyterhub_images.html">Build JupyterHub-ready images</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="deploy.html">Using repo2docker as part of your Continuous Integration</a>
+              </li>
+          
+        
+      
+      
+      
+      
+      
+      
+      
+      
+    </ul>
+
+</nav>
+
+
+              
+          </div>
+
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#the-challenge" class="nav-link">The challenge</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#the-solution" class="nav-link">The solution</a>
+        </li>
+    
+    </ul>
+</nav>
+              
+            </div>
+
+          <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+              <div>
+                
+  <div class="section" id="how-to-automatically-create-a-environment-yml-that-works-with-repo2docker">
+<span id="export-environment"></span><h1>How to automatically create a <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> that works with repo2docker<a class="headerlink" href="#how-to-automatically-create-a-environment-yml-that-works-with-repo2docker" title="Permalink to this headline">¶</a></h1>
+<p>This how-to explains how to create a <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> that specifies all
+installed packages and their precise versions from your environment.</p>
+<div class="section" id="the-challenge">
+<h2>The challenge<a class="headerlink" href="#the-challenge" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">-f</span> <span class="pre">environment.yml</span></code> creates a strict export of all packages.
+This is the most robust for reproducibility, but it does bake in potential
+platform-specific packages, so you can only use an exported environment on the
+same platform.</p>
+<p><code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> uses a linux based image as the starting point for every docker
+image it creates. However a lot of people use OSX or Windows as their day to
+day operating system. This means that the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> created by a strict
+export will not work with error messages saying that certain packages can not
+be resolved (<code class="docutils literal notranslate"><span class="pre">ResolvePackageNotFound</span></code>).</p>
+</div>
+<div class="section" id="the-solution">
+<h2>The solution<a class="headerlink" href="#the-solution" title="Permalink to this headline">¶</a></h2>
+<p>Follow this procedure to create a strict export of your environment that will
+work with <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> and sites like <a class="reference external" href="https://mybinder.org/">mybinder.org</a>.</p>
+<p>We will launch a terminal inside a basic docker image, install the packages
+you need and then perform a strict export of the environment.</p>
+<ol class="arabic simple">
+<li><p>install repo2docker on your computer by following <a class="reference internal" href="../install.html#install"><span class="std std-ref">Installing repo2docker</span></a></p></li>
+<li><p>in a terminal launch a basic repository
+<code class="docutils literal notranslate"><span class="pre">repo2docker</span> <span class="pre">https://github.com/binder-examples/conda-freeze</span></code>
+inside repo2docker</p></li>
+<li><p>open the URL printed at the end in a browser, the URL should look like
+<code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:61037/?token=30e61ec80bda6dd0d14805ea76bb59e7b0cd78b5d6b436f0</span></code></p></li>
+<li><p>open a terminal by clicking “New -&gt; Terminal” next to the “Upload” button on the
+right hand side of the webpage</p></li>
+<li><p>install the packages your project requires with <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">install</span> <span class="pre">&lt;yourpackages&gt;</span></code></p></li>
+<li><p>use <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">env</span> <span class="pre">export</span> <span class="pre">-n</span> <span class="pre">root</span></code> to print the environment</p></li>
+<li><p>copy and paste the environment you just printed into a <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> in
+your projects repository</p></li>
+<li><p>close your browser tabs and exit the repo2docker session by pressing Ctrl-C.</p></li>
+</ol>
+<p>This will give you a strict export of your environment that precisely pins the
+versions of packages in your environment based on a linux environment.</p>
+</div>
+</div>
+
+
+              </div>
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="languages.html" title="previous page">Choose languages for your environment</a>
+    <a class='right-next' id="next-link" href="lab_workspaces.html" title="next page">Share JupyterLab Workspaces with a repository</a>
+
+              </div>
+          </main>
+
+      </div>
+    </div><script>
+    // TOC sidebar - add "active" class to parent list
+    //
+    // Bootstrap's scrollspy adds the active class to the <a> link,
+    // but for the automatic collapsing we need this on the parent list item.
+    //
+    // The event is triggered on "window" (and not the nav item as documented),
+    // see https://github.com/twbs/bootstrap/issues/20086
+    $(window).on("activate.bs.scrollspy", function(){
+    var navLinks = document.querySelectorAll('#bd-toc-nav a');
+    for (var i = 0; i < navLinks.length; i++) {
+        var navLink = navLinks[i];
+        navLink.parentElement.classList.remove('active');
+    }
+    var navLinks = document.querySelectorAll('#bd-toc-nav a.active');
+    for (var i = 0; i < navLinks.length; i++) {
+        var navLink = navLinks[i];
+        navLink.parentElement.classList.add('active');
+    }
+    });
+
+    /**
+     * Use left and right arrow keys to navigate forward and backwards.
+    */
+    const LEFT_ARROW_KEYCODE = 37
+    const RIGHT_ARROW_KEYCODE = 39
+
+    const getPrevUrl = () => document.getElementById('prev-link').href
+    const getNextUrl = () => document.getElementById('next-link').href
+    const initPageNav = (event) => {
+        const keycode = event.which
+
+        if (keycode === LEFT_ARROW_KEYCODE) {
+            window.location.href = getPrevUrl();
+        } else if (keycode === RIGHT_ARROW_KEYCODE) {
+            window.location.href = getNextUrl();
+        }
+    };
+
+    var keyboardListener = false;
+    $( document ).ready(() => {
+        if (keyboardListener === false) {
+            document.addEventListener('keydown', initPageNav)
+            keyboardListener = true;
+        }
+    });
+</script>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Project Jupyter.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>

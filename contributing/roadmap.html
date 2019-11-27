@@ -1,0 +1,365 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>The repo2docker roadmap &#8212; repo2docker 0.10.0 documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../_static/sphinx-bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link href="../_static/css/custom.css" rel="stylesheet">
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Architecture of repo2docker" href="../architecture.html" />
+    <link rel="prev" title="Contributing to repo2docker development" href="contributing.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+
+<a class="navbar-brand" href="../index.html">
+  <img src="../_static/logo.png" class="logo" alt="logo">
+</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div id="navbar-menu" class="collapse navbar-collapse">
+  <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="../index.html">Home</a>
+    </li>
+    
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../getting-started/index.html">Getting Started</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../howto/index.html">How-to Guides</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../configuration/index.html">Configuring your repository</a>
+    </li>
+    
+    <li class="nav-item active">
+        <a class="nav-link" href="index.html">Contributing</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="../changelog.html">Changelog</a>
+    </li>
+    
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="https://github.com/pandas-dev/pandas" target="_blank" rel="noopener">
+        <span><i class="fab fa-github-alt" style="color:#333;font-size:1rem;line-height:1.25"></i></span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://twitter.com/pandas_dev" target="_blank" rel="noopener">
+        <span><i class="fab fa-twitter" style="color:#55acee;font-size:1rem;line-height:1.25"></i></span>
+      </a>
+    </li>
+  </ul>
+</div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+              
+
+<form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+      
+      
+        
+          
+              <li class="">
+                  <a href="contributing.html">Contributing to repo2docker development</a>
+              </li>
+          
+        
+          
+              <li class="active">
+                  <a href="">The repo2docker roadmap</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="../architecture.html">Architecture of repo2docker</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="../design.html">Design of repo2docker</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="tasks.html">Common tasks</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="buildpack.html">Adding a new buildpack to repo2docker</a>
+              </li>
+          
+        
+      
+      
+      
+      
+    </ul>
+
+</nav>
+
+
+              
+          </div>
+
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#using-the-roadmap" class="nav-link">Using the roadmap</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#sharing-feedback-on-the-roadmap" class="nav-link">Sharing Feedback on the Roadmap</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#what-do-we-mean-by-next-step" class="nav-link">What do we mean by “next step”?</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#reviewing-and-updating-the-roadmap" class="nav-link">Reviewing and Updating the Roadmap</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#the-roadmap-proper" class="nav-link">The roadmap proper</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#project-vision" class="nav-link">Project vision</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#now" class="nav-link">Now</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#soon" class="nav-link">Soon</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#later" class="nav-link">Later</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+    </ul>
+</nav>
+              
+            </div>
+
+          <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+              <div>
+                
+  <div class="section" id="the-repo2docker-roadmap">
+<h1>The repo2docker roadmap<a class="headerlink" href="#the-repo2docker-roadmap" title="Permalink to this headline">¶</a></h1>
+<p>This roadmap collects “next steps” for repo2docker. It is about creating a
+shared understanding of the project’s vision and direction amongst
+the community of users, contributors, and maintainers.
+The goal is to communicate priorities and upcoming release plans.
+It is not a aimed at limiting contributions to what is listed here.</p>
+<div class="section" id="using-the-roadmap">
+<h2>Using the roadmap<a class="headerlink" href="#using-the-roadmap" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="sharing-feedback-on-the-roadmap">
+<h3>Sharing Feedback on the Roadmap<a class="headerlink" href="#sharing-feedback-on-the-roadmap" title="Permalink to this headline">¶</a></h3>
+<p>All of the community is encouraged to provide feedback as well as share new
+ideas with the community. Please do so by submitting an issue. If you want to
+have an informal conversation first use one of the other communication channels.
+After submitting the issue, others from the community will probably
+respond with questions or comments they have to clarify the issue. The
+maintainers will help identify what a good next step is for the issue.</p>
+</div>
+<div class="section" id="what-do-we-mean-by-next-step">
+<h3>What do we mean by “next step”?<a class="headerlink" href="#what-do-we-mean-by-next-step" title="Permalink to this headline">¶</a></h3>
+<p>When submitting an issue, think about what “next step” category best describes
+your issue:</p>
+<ul class="simple">
+<li><p><strong>now</strong>, concrete/actionable step that is ready for someone to start work on.
+These might be items that have a link to an issue or more abstract like
+“decrease typos and dead links in the documentation”</p></li>
+<li><p><strong>soon</strong>, less concrete/actionable step that is going to happen soon,
+discussions around the topic are coming close to an end at which point it can
+move into the “now” category</p></li>
+<li><p><strong>later</strong>, abstract ideas or tasks, need a lot of discussion or
+experimentation to shape the idea so that it can be executed. Can also
+contain concrete/actionable steps that have been postponed on purpose
+(these are steps that could be in “now” but the decision was taken to work on
+them later)</p></li>
+</ul>
+</div>
+<div class="section" id="reviewing-and-updating-the-roadmap">
+<h3>Reviewing and Updating the Roadmap<a class="headerlink" href="#reviewing-and-updating-the-roadmap" title="Permalink to this headline">¶</a></h3>
+<p>The roadmap will get updated as time passes (next review by 31st January 2019) based
+on discussions and ideas captured as issues.
+This means this list should not be exhaustive, it should only represent
+the “top of the stack” of ideas. It should
+not function as a wish list, collection of feature requests or todo list.
+For those please create a
+<a class="reference external" href="https://github.com/jupyter/repo2docker/issues/new">new issue</a>.</p>
+<p>The roadmap should give the reader an idea of what is happening next, what needs
+input and discussion before it can happen and what has been postponed.</p>
+</div>
+</div>
+<div class="section" id="the-roadmap-proper">
+<h2>The roadmap proper<a class="headerlink" href="#the-roadmap-proper" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="project-vision">
+<h3>Project vision<a class="headerlink" href="#project-vision" title="Permalink to this headline">¶</a></h3>
+<p>Repo2docker is a dependable tool used by humans that reduces the complexity of
+creating the environment in which a piece of software can be executed.</p>
+</div>
+<div class="section" id="now">
+<h3>Now<a class="headerlink" href="#now" title="Permalink to this headline">¶</a></h3>
+<p>The “Now” items are being actively worked on by the project:</p>
+<ul class="simple">
+<li><p>reduce documentation typos and syntax errors</p></li>
+<li><p>increase test coverage to 80% (see https://codecov.io/gh/jupyter/repo2docker/tree/master/repo2docker for low coverage files)</p></li>
+<li><p>mounting repository contents in locations that is not <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code></p></li>
+<li><p>investigate options for pinning repo2docker versions (<a class="reference external" href="https://github.com/jupyter/repo2docker/issues/490">#490</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="soon">
+<h3>Soon<a class="headerlink" href="#soon" title="Permalink to this headline">¶</a></h3>
+<p>The “Soon” items are being discussed/a plan of action is being made. Once an
+item reaches the point of an actionable plan and person who wants to work on
+it, the item will be moved to the “Now” section. Typically, these will be moved
+at a future review of the roadmap.</p>
+<ul class="simple">
+<li><p>create the contributor highway, define the route from newcomer to project lead</p></li>
+<li><p>add Julia Manifest support (https://docs.julialang.org/en/v1/stdlib/Pkg/index.html, <a class="reference external" href="https://github.com/jupyter/repo2docker/issues/486">#486</a>)</p></li>
+<li><p>support different base images/build pack stacks (<a class="reference external" href="https://github.com/jupyter/repo2docker/issues/487">#487</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="later">
+<h3>Later<a class="headerlink" href="#later" title="Permalink to this headline">¶</a></h3>
+<p>The “Later” items are things that are at the back of the project’s mind. At this
+time there is no active plan for an item. The project would like to find the
+resources and time to discuss and then execute these ideas.</p>
+<ul class="simple">
+<li><p>support execution on a remote host (with more resources than available locally) via the command-line</p></li>
+<li><p>add support for using ZIP files as the repo (<code class="docutils literal notranslate"><span class="pre">repo2docker</span> <span class="pre">https://example.com/an-archive.zip</span></code>)</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+              </div>
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="contributing.html" title="previous page">Contributing to repo2docker development</a>
+    <a class='right-next' id="next-link" href="../architecture.html" title="next page">Architecture of repo2docker</a>
+
+              </div>
+          </main>
+
+      </div>
+    </div><script>
+    // TOC sidebar - add "active" class to parent list
+    //
+    // Bootstrap's scrollspy adds the active class to the <a> link,
+    // but for the automatic collapsing we need this on the parent list item.
+    //
+    // The event is triggered on "window" (and not the nav item as documented),
+    // see https://github.com/twbs/bootstrap/issues/20086
+    $(window).on("activate.bs.scrollspy", function(){
+    var navLinks = document.querySelectorAll('#bd-toc-nav a');
+    for (var i = 0; i < navLinks.length; i++) {
+        var navLink = navLinks[i];
+        navLink.parentElement.classList.remove('active');
+    }
+    var navLinks = document.querySelectorAll('#bd-toc-nav a.active');
+    for (var i = 0; i < navLinks.length; i++) {
+        var navLink = navLinks[i];
+        navLink.parentElement.classList.add('active');
+    }
+    });
+
+    /**
+     * Use left and right arrow keys to navigate forward and backwards.
+    */
+    const LEFT_ARROW_KEYCODE = 37
+    const RIGHT_ARROW_KEYCODE = 39
+
+    const getPrevUrl = () => document.getElementById('prev-link').href
+    const getNextUrl = () => document.getElementById('next-link').href
+    const initPageNav = (event) => {
+        const keycode = event.which
+
+        if (keycode === LEFT_ARROW_KEYCODE) {
+            window.location.href = getPrevUrl();
+        } else if (keycode === RIGHT_ARROW_KEYCODE) {
+            window.location.href = getNextUrl();
+        }
+    };
+
+    var keyboardListener = false;
+    $( document ).ready(() => {
+        if (keyboardListener === false) {
+            document.addEventListener('keydown', initPageNav)
+            keyboardListener = true;
+        }
+    });
+</script>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Project Jupyter.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>

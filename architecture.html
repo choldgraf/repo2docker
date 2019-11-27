@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Architecture of repo2docker &#8212; repo2docker 0.10.0 documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="_static/sphinx-bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link href="_static/css/custom.css" rel="stylesheet">
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Design of repo2docker" href="design.html" />
+    <link rel="prev" title="The repo2docker roadmap" href="contributing/roadmap.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+
+<a class="navbar-brand" href="index.html">
+  <img src="_static/logo.png" class="logo" alt="logo">
+</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div id="navbar-menu" class="collapse navbar-collapse">
+  <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+    </li>
+    
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="getting-started/index.html">Getting Started</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="howto/index.html">How-to Guides</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="configuration/index.html">Configuring your repository</a>
+    </li>
+    
+    <li class="nav-item active">
+        <a class="nav-link" href="contributing/index.html">Contributing</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="changelog.html">Changelog</a>
+    </li>
+    
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="https://github.com/pandas-dev/pandas" target="_blank" rel="noopener">
+        <span><i class="fab fa-github-alt" style="color:#333;font-size:1rem;line-height:1.25"></i></span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://twitter.com/pandas_dev" target="_blank" rel="noopener">
+        <span><i class="fab fa-twitter" style="color:#55acee;font-size:1rem;line-height:1.25"></i></span>
+      </a>
+    </li>
+  </ul>
+</div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+              
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
+  
+
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+      
+      
+        
+          
+              <li class="">
+                  <a href="contributing/contributing.html">Contributing to repo2docker development</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="contributing/roadmap.html">The repo2docker roadmap</a>
+              </li>
+          
+        
+          
+              <li class="active">
+                  <a href="">Architecture of repo2docker</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="design.html">Design of repo2docker</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="contributing/tasks.html">Common tasks</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="contributing/buildpack.html">Adding a new buildpack to repo2docker</a>
+              </li>
+          
+        
+      
+      
+      
+      
+    </ul>
+
+</nav>
+
+
+              
+          </div>
+
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#buildpacks" class="nav-link">Buildpacks</a><ul class="nav section-nav flex-column">
+                
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#detect" class="nav-link">Detect</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#build-base-environment" class="nav-link">Build base environment</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#copy-repository-contents" class="nav-link">Copy repository contents</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#assemble-repository-environment" class="nav-link">Assemble repository environment</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#push" class="nav-link">Push</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h3">
+            <a href="#run" class="nav-link">Run</a>
+        </li>
+    
+            </ul>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#contentproviders" class="nav-link">ContentProviders</a>
+        </li>
+    
+    </ul>
+</nav>
+              
+            </div>
+
+          <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+              <div>
+                
+  <div class="section" id="architecture-of-repo2docker">
+<h1>Architecture of repo2docker<a class="headerlink" href="#architecture-of-repo2docker" title="Permalink to this headline">¶</a></h1>
+<p>This is a living document talking about the architecture of repo2docker
+from various perspectives.</p>
+<div class="section" id="buildpacks">
+<h2>Buildpacks<a class="headerlink" href="#buildpacks" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>buildpack</strong> concept comes from <a class="reference external" href="https://devcenter.heroku.com/articles/buildpacks">Heroku</a>
+and Ruby on Rails’ <a class="reference external" href="http://rubyonrails.org/doctrine/#convention-over-configuration">Convention over Configuration</a>
+doctrine.</p>
+<p>Instead of the user specifying a complete specification of exactly how they want
+their environment to be, they can focus only on how their environment differs from a conventional
+environment. This means instead of deciding ‘should I get Python from Apt or pyenv or ?’, user
+can just specify ‘I want python-3.6’. Usually, specifying a <strong>runtime</strong> and list of <strong>libraries</strong>
+with explicit <strong>versions</strong> is all that is needed.</p>
+<p>In repo2docker, a Buildpack does the following things:</p>
+<ol class="simple">
+<li><p><strong>Detect</strong> if it can handle a given repository</p></li>
+<li><p><strong>Build</strong> a base language environment in the docker image</p></li>
+<li><p><strong>Copy</strong> the contents of the repository into the docker image</p></li>
+<li><p><strong>Assemble</strong> a specific environment in the docker image based on repository contents</p></li>
+<li><p><strong>Push</strong> the built docker image to a specific docker registry (optional)</p></li>
+<li><p><strong>Run</strong> the build docker image as a docker container (optional)</p></li>
+</ol>
+<div class="section" id="detect">
+<h3>Detect<a class="headerlink" href="#detect" title="Permalink to this headline">¶</a></h3>
+<p>When given a repository, repo2docker first has to determine which buildpack to use.
+It takes the following steps to determine this:</p>
+<ol class="simple">
+<li><p>Look at the ordered list of <code class="docutils literal notranslate"><span class="pre">BuildPack</span></code> objects listed in <code class="docutils literal notranslate"><span class="pre">Repo2Docker.buildpacks</span></code>
+traitlet. This is populated with a default set of buildpacks in most-specific-to-least-specific
+order. Other applications using this can add / change this using traditional
+<a class="reference external" href="http://traitlets.readthedocs.io/en/stable/">traitlet</a> configuration mechanisms.</p></li>
+<li><p>Calls the <code class="docutils literal notranslate"><span class="pre">detect</span></code> method of each <code class="docutils literal notranslate"><span class="pre">BuildPack</span></code> object. This method assumes that the repository
+is present in the current working directory, and should return <code class="docutils literal notranslate"><span class="pre">True</span></code> if the repository is
+something that it should be used for. For example, a <code class="docutils literal notranslate"><span class="pre">BuildPack</span></code> that uses <code class="docutils literal notranslate"><span class="pre">conda</span></code> to install
+libraries can check for presence of an <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> file and say ‘yes, I can handle this
+repository’ by returning <code class="docutils literal notranslate"><span class="pre">True</span></code>. Usually buildpacks look for presence of specific files
+(<code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>, <code class="docutils literal notranslate"><span class="pre">install.R</span></code>, <code class="docutils literal notranslate"><span class="pre">manifest.xml</span></code> etc) to determine if they can handle a
+repository or not. Buildpacks may also look into specific files to determine specifics of the
+required environment, such as the Stencila integration which extracts the required language-specific
+executions contexts from an XML file (see base <code class="docutils literal notranslate"><span class="pre">BuildPack</span></code>). More than one buildpack may use such
+information, as properties can be inherited (e.g. the R buildpack uses the list of required Stencila
+contexts to see if R must be installed).</p></li>
+<li><p>If no <code class="docutils literal notranslate"><span class="pre">BuildPack</span></code> returns true, then repo2docker will use the default <code class="docutils literal notranslate"><span class="pre">BuildPack</span></code> (defined in
+<code class="docutils literal notranslate"><span class="pre">Repo2Docker.default_buildpack</span></code> traitlet).</p></li>
+</ol>
+</div>
+<div class="section" id="build-base-environment">
+<h3>Build base environment<a class="headerlink" href="#build-base-environment" title="Permalink to this headline">¶</a></h3>
+<p>Once a buildpack is chosen, it builds a <strong>base environment</strong> that is mostly the same for various
+repositories built with the same buildpack.</p>
+<p>For example, in <code class="docutils literal notranslate"><span class="pre">CondaBuildPack</span></code>, the base environment consists of installing <a class="reference external" href="https://conda.io/miniconda.html">miniconda</a>
+and basic notebook packages (from <code class="docutils literal notranslate"><span class="pre">repo2docker/buildpacks/conda/environment.yml</span></code>). This is going
+to be the same for most repositories built with <code class="docutils literal notranslate"><span class="pre">CondaBuildPack</span></code>, so we want to use
+<a class="reference external" href="https://thenewstack.io/understanding-the-docker-cache-for-faster-builds/">docker layer caching</a> as
+much as possible for performance reasons. Next time a repository is built with <code class="docutils literal notranslate"><span class="pre">CondaBuildPack</span></code>,
+we can skip straight to the <strong>copy</strong> step (since the base environment docker image <em>layers</em> have
+already been built and cached).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">get_build_scripts</span></code> and <code class="docutils literal notranslate"><span class="pre">get_build_script_files</span></code> methods are primarily used for this.
+<code class="docutils literal notranslate"><span class="pre">get_build_scripts</span></code> can return arbitrary bash script lines that can be run as different users,
+and <code class="docutils literal notranslate"><span class="pre">get_build_script_files</span></code> is used to copy specific scripts (such as a conda installer) into
+the image to be run as pat of <code class="docutils literal notranslate"><span class="pre">get_build_scripts</span></code>. Code in either has following constraints:</p>
+<ol class="simple">
+<li><p>You can <em>not</em> use the contents of repository in them, since this happens before the repository
+is copied into the image. For example, <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code> will not work,
+since there’s no <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> inside the image at this point. This is an explicit
+design decision, to enable better layer caching.</p></li>
+<li><p>You <em>may</em>, however, read the contents of the repository and modify the scripts emitted based
+on that! For example, in <code class="docutils literal notranslate"><span class="pre">CondaBuildPack</span></code>, if there’s Python 2 specified in <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>,
+a different kind of environment is set up. The reading of the <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code> is performed
+in the BuildPack itself, and not in the scripts returned by <code class="docutils literal notranslate"><span class="pre">get_build_scripts</span></code>. This is fine.
+BuildPack authors should still try to minimize the variants created in this fashion, to
+optimize the build cache.</p></li>
+</ol>
+</div>
+<div class="section" id="copy-repository-contents">
+<h3>Copy repository contents<a class="headerlink" href="#copy-repository-contents" title="Permalink to this headline">¶</a></h3>
+<p>The contents of the repository are copied unconditionally into the Docker image, and made
+available for all further commands. This is common to most <code class="docutils literal notranslate"><span class="pre">BuildPack</span></code>s, and the code is in
+the <code class="docutils literal notranslate"><span class="pre">build</span></code> method of the <code class="docutils literal notranslate"><span class="pre">BuildPack</span></code> base class.</p>
+</div>
+<div class="section" id="assemble-repository-environment">
+<h3>Assemble repository environment<a class="headerlink" href="#assemble-repository-environment" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>assemble</strong> stage builds the specific environment that is requested by the repository.
+This usually means installing required libraries specified in a format native to the language
+(<code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">environment.yml</span></code>, <code class="docutils literal notranslate"><span class="pre">REQUIRE</span></code>, <code class="docutils literal notranslate"><span class="pre">install.R</span></code>, etc).</p>
+<p>Most of this work is done in <code class="docutils literal notranslate"><span class="pre">get_assemble_scripts</span></code> method. It can return arbitrary bash script
+lines that can be run as different users, and has access to the repository contents (unlike
+<code class="docutils literal notranslate"><span class="pre">get_build_scripts</span></code>). The docker image layers produced by this usually can not be cached,
+so less restrictions apply to this than to <code class="docutils literal notranslate"><span class="pre">get_build_scripts</span></code>.</p>
+<p>At the end of the assemble step, the docker image is ready to be used in various ways!</p>
+</div>
+<div class="section" id="push">
+<h3>Push<a class="headerlink" href="#push" title="Permalink to this headline">¶</a></h3>
+<p>Optionally, repo2docker can <strong>push</strong> a built image to a <a class="reference external" href="https://docs.docker.com/registry/">docker registry</a>.
+This is done as a convenience only (since you can do the same with a <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">push</span></code> after using repo2docker
+only to build), and implemented in <code class="docutils literal notranslate"><span class="pre">Repo2Docker.push</span></code> method. It is only activated if using the
+<code class="docutils literal notranslate"><span class="pre">--push</span></code> commandline flag.</p>
+</div>
+<div class="section" id="run">
+<h3>Run<a class="headerlink" href="#run" title="Permalink to this headline">¶</a></h3>
+<p>Optionally, repo2docker can <strong>run</strong> the built image and allow the user to access the Jupyter Notebook
+running inside by default. This is also done as a convenience only (since you can do the same with <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code>
+after using repo2docker only to build), and implemented in <code class="docutils literal notranslate"><span class="pre">Repo2Docker.run</span></code>. It is activated by default
+unless the <code class="docutils literal notranslate"><span class="pre">--no-run</span></code> commandline flag is passed.</p>
+</div>
+</div>
+<div class="section" id="contentproviders">
+<h2>ContentProviders<a class="headerlink" href="#contentproviders" title="Permalink to this headline">¶</a></h2>
+<p>ContentProviders provide a way for <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> to know how to find and
+retrieve a repository. They follow a similar pattern as the BuildPacks
+described above. When <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> is called, its main argument will be
+a path to a repository. This might be a local path or a URL. Upon being called,
+<code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> will loop through all ContentProviders and perform the following
+commands:</p>
+<ul>
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">detect()</span></code> method on the repository path given to <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code>. This
+should return any value other than <code class="docutils literal notranslate"><span class="pre">None</span></code> if the path matches what the ContentProvider is looking
+for.</p>
+<blockquote>
+<div><p>For example, the <a class="reference external" href="https://github.com/jupyter/repo2docker/blob/80b979f8580ddef184d2ba7d354e7a833cfa38a4/repo2docker/contentproviders/base.py#L64"><code class="docutils literal notranslate"><span class="pre">Local</span></code> ContentProvider</a>
+checks whether the argument is a valid local path. If so, then <code class="docutils literal notranslate"><span class="pre">detect(</span></code>
+returns a dictionary: <code class="docutils literal notranslate"><span class="pre">{'path':</span> <span class="pre">source}</span></code> which defines the path to the repository.
+This path is used by <code class="docutils literal notranslate"><span class="pre">fetch()</span></code> to check that it matches the output directory.</p>
+</div></blockquote>
+</li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">detect()</span></code> returns something other than <code class="docutils literal notranslate"><span class="pre">None</span></code>, run <code class="docutils literal notranslate"><span class="pre">fetch()</span></code> with the
+returned value as its argument. This should
+result in the contents of the repository being placed locally to a folder.</p></li>
+</ul>
+<p>For more information on ContentProviders, take a look at
+<a class="reference external" href="https://github.com/jupyter/repo2docker/blob/80b979f8580ddef184d2ba7d354e7a833cfa38a4/repo2docker/contentproviders/base.py#L16-L60">the ContentProvider base class</a>
+which has more explanation.</p>
+</div>
+</div>
+
+
+              </div>
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="contributing/roadmap.html" title="previous page">The repo2docker roadmap</a>
+    <a class='right-next' id="next-link" href="design.html" title="next page">Design of repo2docker</a>
+
+              </div>
+          </main>
+
+      </div>
+    </div><script>
+    // TOC sidebar - add "active" class to parent list
+    //
+    // Bootstrap's scrollspy adds the active class to the <a> link,
+    // but for the automatic collapsing we need this on the parent list item.
+    //
+    // The event is triggered on "window" (and not the nav item as documented),
+    // see https://github.com/twbs/bootstrap/issues/20086
+    $(window).on("activate.bs.scrollspy", function(){
+    var navLinks = document.querySelectorAll('#bd-toc-nav a');
+    for (var i = 0; i < navLinks.length; i++) {
+        var navLink = navLinks[i];
+        navLink.parentElement.classList.remove('active');
+    }
+    var navLinks = document.querySelectorAll('#bd-toc-nav a.active');
+    for (var i = 0; i < navLinks.length; i++) {
+        var navLink = navLinks[i];
+        navLink.parentElement.classList.add('active');
+    }
+    });
+
+    /**
+     * Use left and right arrow keys to navigate forward and backwards.
+    */
+    const LEFT_ARROW_KEYCODE = 37
+    const RIGHT_ARROW_KEYCODE = 39
+
+    const getPrevUrl = () => document.getElementById('prev-link').href
+    const getNextUrl = () => document.getElementById('next-link').href
+    const initPageNav = (event) => {
+        const keycode = event.which
+
+        if (keycode === LEFT_ARROW_KEYCODE) {
+            window.location.href = getPrevUrl();
+        } else if (keycode === RIGHT_ARROW_KEYCODE) {
+            window.location.href = getNextUrl();
+        }
+    };
+
+    var keyboardListener = false;
+    $( document ).ready(() => {
+        if (keyboardListener === false) {
+            document.addEventListener('keydown', initPageNav)
+            keyboardListener = true;
+        }
+    });
+</script>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Project Jupyter.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
+  </body>
+</html>

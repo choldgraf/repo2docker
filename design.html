@@ -1,97 +1,273 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Design &#8212; repo2docker 0.1 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <meta charset="utf-8" />
+    <title>Design of repo2docker &#8212; repo2docker 0.10.0 documentation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="_static/sphinx-bootstrap.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    <link href="_static/css/custom.css" rel="stylesheet">
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="shortcut icon" href="_static/favicon.ico"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Frequently Asked Questions (FAQ)" href="faq.html" />
-    <link rel="prev" title="Using repo2docker" href="usage.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="next" title="Common tasks" href="contributing/tasks.html" />
+    <link rel="prev" title="Architecture of repo2docker" href="architecture.html" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+    <nav class="navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main">
+
+<a class="navbar-brand" href="index.html">
+  <img src="_static/logo.png" class="logo" alt="logo">
+</a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+
+<div id="navbar-menu" class="collapse navbar-collapse">
+  <ul id="navbar-main-elements" class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+    </li>
+    
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="getting-started/index.html">Getting Started</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="howto/index.html">How-to Guides</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="configuration/index.html">Configuring your repository</a>
+    </li>
+    
+    <li class="nav-item active">
+        <a class="nav-link" href="contributing/index.html">Contributing</a>
+    </li>
+    
+    <li class="nav-item ">
+        <a class="nav-link" href="changelog.html">Changelog</a>
+    </li>
+    
+  </ul>
+  <ul class="navbar-nav ml-auto">
+    <li class="nav-item">
+      <a class="nav-link" href="https://github.com/pandas-dev/pandas" target="_blank" rel="noopener">
+        <span><i class="fab fa-github-alt" style="color:#333;font-size:1rem;line-height:1.25"></i></span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="https://twitter.com/pandas_dev" target="_blank" rel="noopener">
+        <span><i class="fab fa-twitter" style="color:#55acee;font-size:1rem;line-height:1.25"></i></span>
+      </a>
+    </li>
+  </ul>
+</div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+              
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+
+  <div class="bd-toc-item active">
   
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="design">
-<span id="design"></span><h1>Design<a class="headerlink" href="#design" title="Permalink to this headline">¶</a></h1>
-<p>Two primary use cases for <code class="docutils literal"><span class="pre">repo2docker</span></code> drive most design decisions:</p>
+  <ul class="nav bd-sidenav">
+      
+      
+      
+      
+      
+      
+      
+      
+        
+          
+              <li class="">
+                  <a href="contributing/contributing.html">Contributing to repo2docker development</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="contributing/roadmap.html">The repo2docker roadmap</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="architecture.html">Architecture of repo2docker</a>
+              </li>
+          
+        
+          
+              <li class="active">
+                  <a href="">Design of repo2docker</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="contributing/tasks.html">Common tasks</a>
+              </li>
+          
+        
+          
+              <li class="">
+                  <a href="contributing/buildpack.html">Adding a new buildpack to repo2docker</a>
+              </li>
+          
+        
+      
+      
+      
+      
+    </ul>
+
+</nav>
+
+
+              
+          </div>
+
+          <div class="d-none d-xl-block col-xl-2 bd-toc">
+              
+
+<nav id="bd-toc-nav">
+    <ul class="nav section-nav flex-column">
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#deterministic-output" class="nav-link">Deterministic output</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#reproducibility-and-version-stability" class="nav-link">Reproducibility and version stability</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#unix-principles-do-one-thing-well" class="nav-link">Unix principles “do one thing well”</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#composability" class="nav-link">Composability</a>
+        </li>
+    
+        <li class="nav-item toc-entry toc-h2">
+            <a href="#pareto-principle-the-80-20-rule" class="nav-link">Pareto principle (The 80-20 Rule)</a>
+        </li>
+    
+    </ul>
+</nav>
+              
+            </div>
+
+          <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+              <div>
+                
+  <div class="section" id="design-of-repo2docker">
+<h1>Design of repo2docker<a class="headerlink" href="#design-of-repo2docker" title="Permalink to this headline">¶</a></h1>
+<p>The repo2docker buildpacks are inspired by
+<a class="reference external" href="https://devcenter.heroku.com/articles/buildpacks">Heroku’s Build Packs</a>.
+The philosophy for the repo2docker buildpacks includes:</p>
+<ul class="simple">
+<li><p>using common configuration files for familiar installation and packaging tools</p></li>
+<li><p>allowing configuration files to be combined to compose more complex setups</p></li>
+<li><p>specifying default locations for configuration files
+(in the repository’s root, <code class="docutils literal notranslate"><span class="pre">binder</span></code> or <code class="docutils literal notranslate"><span class="pre">.binder</span></code> directory)</p></li>
+</ul>
+<p>When designing <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> and adding to it in the future, the
+developers are influenced by two primary use cases.
+The use cases for <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> which drive most design decisions are:</p>
 <ol class="simple">
-<li>Automated image building used by projects like
-<a class="reference external" href="http://github.com/jupyterhub/binderhub">BinderHub</a></li>
-<li>Manual image building and running the image from the command line client,
-<code class="docutils literal"><span class="pre">jupyter-repo2docker</span></code>, by users interactively on their workstations</li>
+<li><p>Automated image building used by projects like
+<a class="reference external" href="http://github.com/jupyterhub/binderhub">BinderHub</a></p></li>
+<li><p>Manual image building and running the image from the command line client,
+<code class="docutils literal notranslate"><span class="pre">jupyter-repo2docker</span></code>, by users interactively on their workstations</p></li>
 </ol>
-<p>We share our guiding design principles here. This is not an exhaustive
-list :)</p>
 <div class="section" id="deterministic-output">
-<span id="deterministic-output"></span><h2>Deterministic output<a class="headerlink" href="#deterministic-output" title="Permalink to this headline">¶</a></h2>
-<p>The core of <code class="docutils literal"><span class="pre">repo2docker</span></code> can be considered a
+<h2>Deterministic output<a class="headerlink" href="#deterministic-output" title="Permalink to this headline">¶</a></h2>
+<p>The core of <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> can be considered a
 <a class="reference external" href="https://en.wikipedia.org/wiki/Deterministic_algorithm">deterministic algorithm</a>.
 When given an input directory which has a particular repository checked out, it
 deterministically produces a Dockerfile based on the contents of the directory.
-So if we run <code class="docutils literal"><span class="pre">repo2docker</span></code> on the same directory multiple times, we get the
+So if we run <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> on the same directory multiple times, we get the
 exact same Dockerfile output.</p>
 <p>This provides a few advantages:</p>
 <ol class="simple">
-<li>Reuse of cached built artifacts based on a repository's identity increases
-efficiency and reliability. For example, if we had already run <code class="docutils literal"><span class="pre">reop2docker</span></code>
+<li><p>Reuse of cached built artifacts based on a repository’s identity increases
+efficiency and reliability. For example, if we had already run <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code>
 on a git repository at a particular commit hash, we know we can just re-use
 the old output, since we know it is going to be the same. This provides
 massive performance &amp; architectural advantages when building additional
-tools (like BinderHub) on top of <code class="docutils literal"><span class="pre">reop2docker</span></code>.</li>
-<li>We produce Dockerfiles that have as much in common as possible across
+tools (like BinderHub) on top of <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code>.</p></li>
+<li><p>We produce Dockerfiles that have as much in common as possible across
 multiple repositories, enabling better use of the Docker build cache. This
-also provides massive performance advantages.</li>
+also provides massive performance advantages.</p></li>
 </ol>
 </div>
+<div class="section" id="reproducibility-and-version-stability">
+<h2>Reproducibility and version stability<a class="headerlink" href="#reproducibility-and-version-stability" title="Permalink to this headline">¶</a></h2>
+<p>Many ingredients go into making an image from a repository:</p>
+<ol class="simple">
+<li><p>version of the base docker image</p></li>
+<li><p>version of <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> itself</p></li>
+<li><p>versions of the libraries installed by the repository</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> controls the first two, the user controls the third one. The current
+policy for the version of the base image is that we will keep pace with Ubuntu
+releases until we reach the next release with Long Term Support (LTS). We
+currently use Artful Aardvark (17.10) and the next LTS version will be
+Bionic Beaver (18.04).</p>
+<p>The version of <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> used to build an image can influence which packages
+are installed by default and which features are supported during the build
+process. We will periodically update those packages to keep step with releases
+of Jupyter Notebook, JupyterLab, etc. For packages that are installed by
+default but where you want to control the version we recommend you specify them
+explicitly in your dependencies.</p>
+</div>
 <div class="section" id="unix-principles-do-one-thing-well">
-<span id="unix-principles-do-one-thing-well"></span><h2>Unix principles &quot;do one thing well&quot;<a class="headerlink" href="#unix-principles-do-one-thing-well" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal"><span class="pre">repo2docker</span></code> should do one thing, and do it well. This one thing is:</p>
+<h2>Unix principles “do one thing well”<a class="headerlink" href="#unix-principles-do-one-thing-well" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> should do one thing, and do it well. This one thing is:</p>
 <blockquote>
-<div>Given a repository, deterministically build a docker image from
-it.</div></blockquote>
-<p>There's also some convenience code (to run the built image) for users, but
-that's separated out cleanly. This allows easy use by other projects (like
+<div><p>Given a repository, deterministically build a docker image from
+it.</p>
+</div></blockquote>
+<p>There’s also some convenience code (to run the built image) for users, but
+that’s separated out cleanly. This allows easy use by other projects (like
 BinderHub).</p>
 <p>There is additional (and very useful) design advice on this in
 the <a class="reference external" href="http://www.faqs.org/docs/artu/ch01s06.html">Art of Unix Programming</a> which
 is a highly recommended quick read.</p>
 </div>
 <div class="section" id="composability">
-<span id="composability"></span><h2>Composability<a class="headerlink" href="#composability" title="Permalink to this headline">¶</a></h2>
+<h2>Composability<a class="headerlink" href="#composability" title="Permalink to this headline">¶</a></h2>
 <p>Although other projects, like
 <a class="reference external" href="https://github.com/openshift/source-to-image">s2i</a>, exist to convert source to
-Docker images, <code class="docutils literal"><span class="pre">repo2docker</span></code> provides the additional functionality to support
+Docker images, <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code> provides the additional functionality to support
 <em>composable</em> environments. We want to easily have an image with
 Python3+Julia+R-3.2 environments, rather than just one single language
 environment. While generally one language environment per container works well,
@@ -100,81 +276,79 @@ languages working together to get anything done. So all buildpacks are
 composable, and need to be able to work well with other languages.</p>
 </div>
 <div class="section" id="pareto-principle-the-80-20-rule">
-<span id="pareto-principle-the-80-20-rule"></span><h2><a class="reference external" href="https://en.wikipedia.org/wiki/Pareto_principle">Pareto principle</a> (The 80-20 Rule)<a class="headerlink" href="#pareto-principle-the-80-20-rule" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference external" href="https://en.wikipedia.org/wiki/Pareto_principle">Pareto principle</a> (The 80-20 Rule)<a class="headerlink" href="#pareto-principle-the-80-20-rule" title="Permalink to this headline">¶</a></h2>
 <p>Roughly speaking, we want to support 80% of use cases, and provide an escape
 hatch (raw Dockerfiles) for the other 20%. We explicitly want to provide support
 only for the most common use cases - covering every possible use case never ends
 well.</p>
 <p>An easy process for getting support for more languages here is to demonstrate
 their value with Dockerfiles that other people can use, and then show that this
-pattern is popular enough to be included inside <code class="docutils literal"><span class="pre">reop2docker</span></code>. Remember that 'yes'
-is forever (very hard to remove features!), but 'no' is only temporary!</p>
+pattern is popular enough to be included inside <code class="docutils literal notranslate"><span class="pre">repo2docker</span></code>. Remember that ‘yes’
+is forever (very hard to remove features!), but ‘no’ is only temporary!</p>
 </div>
 </div>
 
 
-          </div>
-        </div>
+              </div>
+              <div class='prev-next-bottom'>
+                
+    <a class='left-prev' id="prev-link" href="architecture.html" title="previous page">Architecture of repo2docker</a>
+    <a class='right-next' id="next-link" href="contributing/tasks.html" title="next page">Common tasks</a>
+
+              </div>
+          </main>
+
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="index.html">
-              <img class="logo" src="_static/logo.svg" alt="Logo"/>
-            </a></p>
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Design</a><ul>
-<li><a class="reference internal" href="#deterministic-output">Deterministic output</a></li>
-<li><a class="reference internal" href="#unix-principles-do-one-thing-well">Unix principles &quot;do one thing well&quot;</a></li>
-<li><a class="reference internal" href="#composability">Composability</a></li>
-<li><a class="reference internal" href="#pareto-principle-the-80-20-rule">Pareto principle (The 80-20 Rule)</a></li>
-</ul>
-</li>
-</ul>
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="usage.html" title="previous chapter">Using <code class="docutils literal"><span class="pre">repo2docker</span></code></a></li>
-      <li>Next: <a href="faq.html" title="next chapter">Frequently Asked Questions (FAQ)</a></li>
-  </ul></li>
-</ul>
-</div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/design.md.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2017, Project Jupyter.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
-      |
-      <a href="_sources/design.md.txt"
-          rel="nofollow">Page source</a>
-    </div>
+    </div><script>
+    // TOC sidebar - add "active" class to parent list
+    //
+    // Bootstrap's scrollspy adds the active class to the <a> link,
+    // but for the automatic collapsing we need this on the parent list item.
+    //
+    // The event is triggered on "window" (and not the nav item as documented),
+    // see https://github.com/twbs/bootstrap/issues/20086
+    $(window).on("activate.bs.scrollspy", function(){
+    var navLinks = document.querySelectorAll('#bd-toc-nav a');
+    for (var i = 0; i < navLinks.length; i++) {
+        var navLink = navLinks[i];
+        navLink.parentElement.classList.remove('active');
+    }
+    var navLinks = document.querySelectorAll('#bd-toc-nav a.active');
+    for (var i = 0; i < navLinks.length; i++) {
+        var navLink = navLinks[i];
+        navLink.parentElement.classList.add('active');
+    }
+    });
 
-    
+    /**
+     * Use left and right arrow keys to navigate forward and backwards.
+    */
+    const LEFT_ARROW_KEYCODE = 37
+    const RIGHT_ARROW_KEYCODE = 39
 
-    
+    const getPrevUrl = () => document.getElementById('prev-link').href
+    const getNextUrl = () => document.getElementById('next-link').href
+    const initPageNav = (event) => {
+        const keycode = event.which
+
+        if (keycode === LEFT_ARROW_KEYCODE) {
+            window.location.href = getPrevUrl();
+        } else if (keycode === RIGHT_ARROW_KEYCODE) {
+            window.location.href = getNextUrl();
+        }
+    };
+
+    var keyboardListener = false;
+    $( document ).ready(() => {
+        if (keyboardListener === false) {
+            document.addEventListener('keydown', initPageNav)
+            keyboardListener = true;
+        }
+    });
+</script>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2019, Project Jupyter.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+    </div>
   </body>
 </html>
